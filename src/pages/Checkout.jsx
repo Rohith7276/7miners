@@ -85,7 +85,7 @@ const Checkout = () => {
     }
 
     return (
-        <div className="w-screen mx-auto px-4 md:px-8">
+        <div className="w-screen mx-auto px-4 md:px-0 md:pl-8">
             <div className="flex flex-col md:flex-row gap-6">
                 <div className="pt-10 md:pt-28 bg-white w-full md:w-[60vw] p-6 md:pr-24 rounded-lg">
                     <h2 className="text-xl font-semibold mb-4">Contact</h2>
@@ -327,13 +327,13 @@ const Checkout = () => {
                         </div>
                         <div className="ml-5">
                             <p className="font-semibold">Bitaxe Gamma 601</p>
-                            <p className="text-gray-600">₹25,960.00</p>
+                            <p className="text-gray-600">₹ {Number(cartQuantity * 25960).toLocaleString('en-IN')}</p>
                         </div>
                     </div>
                     <div className="border-t border-gray-300 pt-4">
                         <div className="flex justify-between mb-2">
                             <p className="text-[0.7rem] text-gray-600">Subtotal</p>
-                            <p className="text-[0.7rem] text-end">₹25,960.00</p>
+                            <p className="text-[0.7rem] text-end">  ₹ {Number(cartQuantity * 25960).toLocaleString('en-IN')}</p>
                         </div>
                         <div className="flex justify-between w-full mb-2">
                             <p className="text-[0.7rem] text-gray-600">Shipping</p>
@@ -341,9 +341,9 @@ const Checkout = () => {
                         </div>
                         <div className="flex justify-between font-semibold text-lg">
                             <p className="text-[0.9rem]">Total</p>
-                            <p className="text-[0.9rem]">INR ₹25,960.00</p>
+                            <p className="text-[0.9rem]">INR ₹ {Number(cartQuantity * 25960).toLocaleString('en-IN')}</p>
                         </div>
-                        <p className="text-gray-600 text-[0.7rem]">Including ₹3,960.00 in taxes</p>
+                        <p className="text-gray-600 text-[0.7rem]">Including  Rs.{Number(cartQuantity * 3960.00).toLocaleString('en-IN')} in taxes</p>
                     </div>
                 </div>
             </div>
