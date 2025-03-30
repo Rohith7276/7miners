@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { useCartStore } from '../store/useCartStore';
-import axios from 'axios';
-import RazorPay from '../components/RazorPay';
+import emailjs from "@emailjs/browser";
 
 const Checkout = () => {
     const [contact, setContact] = useState('');
@@ -25,18 +24,69 @@ const Checkout = () => {
     const [billingCity, setBillingCity] = useState('');
     const [billingState, setBillingState] = useState('Karnataka');
     const [billingPinCode, setBillingPinCode] = useState('');
+   const [transactionId, setTransactionId] = useState('')
     const [handlePayment, setHandlePayment] = useState(false)
 
+    const chekOut = async (details) => {
+        const sendEmail = emailOffers ? "\nEmail Offers: Yes" : "\nEmail Offers: No"
 
-    const handleCompleteOrder = () => {
-        // Handle order completion logic here
-        
-        if (!contact || !lastName || !address || !city || !pinCode) {
-            alert('Please fill in all required fields.');
-            return;
-        } 
-        let shippingAddress = {
-            contact, 
+        emailjs
+            .send(
+                import.meta.env.VITE_APP_EMAILJS_SERVICE_ID,
+                import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID,
+                {
+                    from_name: details.shippingAddress.firstName + " " + details.shippingAddress.lastName,
+                    to_name: "Anand",
+                    message: `Order Placed:
+    Customer Details:
+    Email/Phone No: ${details.shippingAddress.contact}
+    First Name: ${firstName}
+    Last Name: ${lastName}
+
+    Product Details:
+    Product Name: Bitaxe Gamma 601
+    Quantity: ${cartQuantity}
+    Total Amount: ₹${Number(cartQuantity * 23990).toLocaleString('en-IN')}
+    Transaction ID: ${transactionId}
+
+    Shipping Address:
+    Address: ${details.shippingAddress.address}
+    Apartment: ${details.shippingAddress.apartment}
+    City: ${details.shippingAddress.city}
+    State: ${details.shippingAddress.state}
+    PinCode: ${details.shippingAddress.pinCode}
+    Country: ${details.shippingAddress.country}
+    Contact: ${details.shippingAddress.contact}
+
+    Billing Address:
+    Address: ${details.userBillingAddress.address}
+    Apartment: ${details.userBillingAddress.apartment}
+    City: ${details.userBillingAddress.city}
+    State: ${details.userBillingAddress.state}
+    PinCode: ${details.userBillingAddress.pinCode}
+    Country: ${details.userBillingAddress.country}${sendEmail}`,
+                },
+                import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY
+            )
+            .then(
+                () => {
+                    console.log("Email sent successfully");
+                },
+                (error) => {
+                    console.error("Failed to send email:", error);
+                }
+            );
+        };
+        const handleCompleteOrder = () => {
+            // Handle order completion logic here
+try {
+    
+    if (!contact || !transactionId || !lastName || !address || !city || !pinCode) {
+        alert('Please fill in all required fields.');
+        return;
+    }
+    let shippingAddress = {
+        contact,
             country,
             firstName,
             lastName,
@@ -44,9 +94,9 @@ const Checkout = () => {
             apartment,
             city,
             state,
-            pinCode, 
+            pinCode,
         }
-        
+
         let details;
         if (!billingSameAsShipping) {
             let userBillingAddress = {
@@ -59,12 +109,12 @@ const Checkout = () => {
                 billingState,
                 billingPinCode
             }
-            details = {shippingAddress, userBillingAddress}
+            details = { shippingAddress, userBillingAddress }
         }
-        else details = {shippingAddress, userBillingAddress: shippingAddress}
+        else details = { shippingAddress, userBillingAddress: shippingAddress }
         if (saveInfo) {
             localStorage.setItem('shippingAddress', shippingAddress)
-            if (!billingSameAsShipping){
+            if (!billingSameAsShipping) {
                 let userBillingAddress = {
                     billingCountry,
                     billingFirstName,
@@ -82,6 +132,14 @@ const Checkout = () => {
         console.log('details: ', details);
         setHandlePayment(true)
         // window.location.href = '/';
+        // Use EmailJS official client for sending emails
+        chekOut(details)
+
+        alert("Order Placed Successfully")
+        window.location.href = '/';
+    } catch (error) {
+        alert("Some error has been occured")
+    }
     }
 
     return (
@@ -96,7 +154,7 @@ const Checkout = () => {
                             placeholder="Email or mobile phone number"
                             value={contact}
                             onChange={(e) => setContact(e.target.value)}
-                        />
+                            />
                         <div className="flex items-center mt-2">
                             <input
                                 type="checkbox"
@@ -200,7 +258,12 @@ const Checkout = () => {
                         Enter your shipping address to view available shipping methods.
                     </div>
                     <h2 className="text-xl font-semibold mt-6 mb-4">Payment</h2>
-                    <p className="text-[0.7rem] text-gray-700 mb-4">All transactions are secure and encrypted.</p>
+                    <div>
+                        <label className="block text-sm font-medium text-gray-700">UPI ID : </label>
+                        <p className="text-[1rem] text-gray-700 mb-4">Please pay <span className='font-bold'> ₹{Number(cartQuantity * 23990).toLocaleString('en-IN')}</span> to the provided UPI ID and enter the transaction id for completing the order.</p>
+
+                        <input placeholder='Please Enter Transaction Id' className="w-full mb-6 p-2 border border-gray-300 text-sm rounded" type="text"   onChange={(e) => setTransactionId(e.target.value)} />
+                    </div>
                     <div className="p-4 border border-blue-500 rounded mb-4">
                         <p className="font-semibold mb-2">Payments only processed through UPI or Cash</p>
                         <p className="text-lg text-gray-600 mb-2">
@@ -313,6 +376,7 @@ const Checkout = () => {
                             </div>
                         )}
                     </div>
+
                     <button className="w-full bg-blue-600 text-white p-2 rounded" onClick={handleCompleteOrder}>Complete order</button>
                 </div>
                 <div className="bg-gray-200 pt-10 md:pt-28 w-full md:w-[40vw] p-6 rounded-lg shadow-md">
@@ -327,13 +391,13 @@ const Checkout = () => {
                         </div>
                         <div className="ml-5">
                             <p className="font-semibold">Bitaxe Gamma 601</p>
-                            <p className="text-gray-600">₹ {Number(cartQuantity * 25960).toLocaleString('en-IN')}</p>
+                            <p className="text-gray-600">₹ {Number(cartQuantity * 23990).toLocaleString('en-IN')}</p>
                         </div>
                     </div>
                     <div className="border-t border-gray-300 pt-4">
                         <div className="flex justify-between mb-2">
                             <p className="text-[0.7rem] text-gray-600">Subtotal</p>
-                            <p className="text-[0.7rem] text-end">  ₹ {Number(cartQuantity * 25960).toLocaleString('en-IN')}</p>
+                            <p className="text-[0.7rem] text-end">  ₹ {Number(cartQuantity * 23990).toLocaleString('en-IN')}</p>
                         </div>
                         <div className="flex justify-between w-full mb-2">
                             <p className="text-[0.7rem] text-gray-600">Shipping</p>
@@ -341,13 +405,12 @@ const Checkout = () => {
                         </div>
                         <div className="flex justify-between font-semibold text-lg">
                             <p className="text-[0.9rem]">Total</p>
-                            <p className="text-[0.9rem]">INR ₹ {Number(cartQuantity * 25960).toLocaleString('en-IN')}</p>
+                            <p className="text-[0.9rem]">INR ₹ {Number(cartQuantity * 23990).toLocaleString('en-IN')}</p>
                         </div>
                         <p className="text-gray-600 text-[0.7rem]">Including  Rs.{Number(cartQuantity * 3960.00).toLocaleString('en-IN')} in taxes</p>
                     </div>
                 </div>
             </div>
-            {handlePayment && <RazorPay />}
         </div>
     );
 }

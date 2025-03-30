@@ -4,7 +4,7 @@ const products = [
     {
         id: 1,
         name: 'Bitaxe Gamma 601',
-        price: 25960.00,
+        price: 23990.00,
         image: 'https://7miners.in/cdn/shop/files/800-800-max-1.png?v=1742201216&width=713',
         description: 'The Bitaxe Gamma 601 is a high-performance product designed for efficiency and reliability.', 
     }, 

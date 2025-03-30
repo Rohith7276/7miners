@@ -102,9 +102,11 @@ const Bitaxe = () => {
                                    <p className='animate opacity-0 text-3xl'>Bitaxe Gamma 601</p>
                                    <div className='flex flex-col gap-1 my-3'>
                
-                                       <p className='animate opacity-0'>Rs. 25,960.00</p>
-                                       <p className='animate opacity-0 text-sm text-gray-500'>Taxes included. <a href='/shipping-policy' className='border-b hover:border-b-2 border-black'>Shipping</a> calculated at checkout.</p>
-                                   </div>
+                                   <div className='flex flex-col gap-1 my-3'>
+                        <h1 className='animate opacity-0 text-xl'> <span className='text-red-700'>Limited Time Offer!!!</span><br/><span className='text-4xl font-semibold text-blue-500'>7.59%</span> Off Till April 5th with free shipping! </h1>
+                        <p className='animate opacity-0 mt-1 text-2xl'><span className='line-through text-sm'>Rs. ₹25960</span> Rs. 23990</p>
+                        <p className='animate opacity-0 text-sm text-gray-500'>Taxes included. <a href='/shipping-policy' className='border-b hover:border-b-2 border-black'>Shipping</a> calculated at checkout.</p>
+                    </div>        </div>
                                    <div className='flex flex-col  gap-1'>
                                        <h3 className='opacity-0 text-sm text-gray-500 animate'>Quantity</h3>
                                        <div className='flex animate opacity-0 items-center border border-gray-500 w-fit py-2 rounded-sm'>
