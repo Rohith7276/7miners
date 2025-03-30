@@ -65,8 +65,8 @@ const Home = () => {
         let x = localStorage.getItem("cartQuantity")
         addToCart()
         addCartAnimation()
-        localStorage.setItem("cartQuantity", parseInt(x) + quantity)
-        console.log('cartQuantity', cartQuantity)
+        if(x)localStorage.setItem("cartQuantity", parseInt(x) + quantity)
+            else localStorage.setItem("cartQuantity", quantity) 
     }
 
     useEffect(() => {
@@ -115,7 +115,8 @@ const Home = () => {
                             <a href='/checkout' className='w-full'> <button className='bg-black animate opacity-0 w-full h-[2.5rem] border border-white hover:border-black text-white rounded-sm px-3 mt-2 text-[0.7rem]' onClick={() => {
                                 let x = localStorage.getItem("cartQuantity")
                                 addToCart()
-                                localStorage.setItem("cartQuantity", parseInt(x) + quantity)
+                                if(x)localStorage.setItem("cartQuantity", parseInt(x) + quantity)
+                                    else localStorage.setItem("cartQuantity", quantity)
                             }}>Buy it now</button></a>
                         </div>
                         <div className='flex flex-col  md:flex-row justify-between h-fit items-center animate opacity-0 mt-4'>
