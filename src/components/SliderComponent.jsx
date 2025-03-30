@@ -55,7 +55,7 @@ export const SliderComponent = () => {
       </div>
     ),
     nextArrow: (
-      <div className="lg:mr-[-1.4rem]  mr-[-0.5rem]  lg:m-0" style={{ width: "30px", marginLeft: "-10px", cursor: "pointer" }}>
+      <div className="   mr-[-0.5rem]  lg:m-0" style={{ width: "30px", marginLeft: "-10px", cursor: "pointer" }}>
         <ChevronRight className="w-[2rem] curZ lg:wfull"/>
 
       </div>

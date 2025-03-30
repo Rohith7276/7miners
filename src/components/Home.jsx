@@ -1,7 +1,7 @@
 import React from 'react'
 import { SliderComponent } from './SliderComponent'
 import { useRef, useEffect } from 'react'
-import { Plus, Minus, Share, MoveRight, Check, Cross, X, Facebook, Twitter, Linkedin } from 'lucide-react'
+import { Plus, Minus, Share, MoveRight, Check, Cross, X, Facebook, Twitter, Linkedin, DockIcon } from 'lucide-react'
 import { useCartStore } from '../store/useCartStore'
 import { gsap } from "gsap"
 
@@ -64,6 +64,9 @@ const Home = () => {
     const handleAddToCart = () => {
         let x = localStorage.getItem("cartQuantity")
         addToCart()
+       Array.from(document.getElementsByClassName("cartAppear")).forEach(element => {
+            element.style.display = "block"
+        });
         addCartAnimation()
         if(x)localStorage.setItem("cartQuantity", parseInt(x) + quantity)
             else localStorage.setItem("cartQuantity", quantity) 
@@ -77,7 +80,7 @@ const Home = () => {
 
     return (
         <div className=''>
-            <div className='cartAppear opacity-0 top-[1.5rem] right-4 md:right-24 shadow-sm w-[90vw] md:w-[25vw] border justify-center items-center absolute bg-white z-50 p-5'>
+            <div className='cartAppear fixed  hidden opacity-0 top-[1.5rem] right-4 md:right-24 shadow-sm w-[90vw] md:w-[25vw] border justify-center items-center  bg-white z-50 p-5'>
                 <button onClick={() => exitCartAnimation()} className='cursor-pointer flex justify-end w-full'><X className='h-6' /></button>
                 <h4 className='text-[0.7rem] text-gray-600 mb-2 flex'><Check className='h-4' />Item added to your cart</h4>
                 <div className='flex gap-4'>

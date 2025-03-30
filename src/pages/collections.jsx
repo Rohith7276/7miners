@@ -129,17 +129,20 @@ const collections = () => {
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                 {items.map((product) => (
-                    <div key={product.id} className="flex flex-col items-center">
+                   <a key={product.id} href="/products/bitaxe">
+
+                   <div className="flex flex-col border items-center">
                         <img
                             src={product.image}
                             alt={product.name}
                             className="mb-4"
                             width="300"
                             height="400"
-                        />
+                            />
                         <h2 className="text-lg font-semibold text-center">{product.name}</h2>
                         <p className="text-gray-600 text-center">Rs. {Number(product.price).toLocaleString('en-IN')}</p>
                     </div>
+                            </a>
                 ))}
             </div>
         </div>

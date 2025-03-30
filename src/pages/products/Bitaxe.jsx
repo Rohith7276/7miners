@@ -64,6 +64,9 @@ const Bitaxe = () => {
     const handleAddToCart = () => {
         let x = localStorage.getItem("cartQuantity")
         addToCart()
+        Array.from(document.getElementsByClassName("cartAppear")).forEach(element => {
+            element.style.display = "block"
+        });
         addCartAnimation()
         localStorage.setItem("cartQuantity", parseInt(x) + quantity)
         console.log('cartQuantity', cartQuantity)
@@ -77,7 +80,7 @@ const Bitaxe = () => {
 
     return (
         <div className='my-7'>
-            <div className='cartAppear opacity-0 top-[1.5rem]  right-24 shadow-sm w-[25vw] border justify-center items-center absolute bg-white z-50 p-5'>
+            <div className='cartAppear hidden opacity-0 top-[1.5rem]  right-24 shadow-sm w-[25vw] border justify-center items-center fixed bg-white z-50 p-5'>
                 <button onClick={() => exitCartAnimation()} className='cursor-pointer flex justify-end w-full '><X className='h-6' /></button>
                 <h4 className='text-[0.7rem] text-gray-600 mb-2 flex'><Check className='h-4' />Item added to your cart</h4>
                 <div className='flex gap-4'>
