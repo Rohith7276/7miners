@@ -69,7 +69,7 @@ const Login = () => {
 </div>}
     </> :
     <div className='h-[87vh] flex flex-col items-center justify-center'>
-      <h1 className='text-2xl font-semibold'>Welcome to 7miners {user}</h1> 
+      <h1 className='text-2xl font-semibold text-center'>Welcome to 7miners {user}</h1> 
       <button onClick={()=>{localStorage.removeItem("user"); setUser(null)}} className='bg-red-500 text-white p-2 rounded mt-4'  >Logout</button>
     </div>
 }</>
