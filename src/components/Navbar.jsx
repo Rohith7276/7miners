@@ -92,8 +92,7 @@ const Navbar = () => {
               type="text"
               className='border border-gray-300 w-full rounded-md h-[1.8rem] md:h-[2rem] px-2 text-[0.7rem] md:text-sm'
               placeholder='Search...'
-              onChange={handleSearch}
-              onBlur={() => setSearch(false)}
+              onChange={handleSearch} 
                
             />
             <div className='w-full m-auto'>
