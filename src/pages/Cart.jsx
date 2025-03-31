@@ -28,21 +28,19 @@ if(cartQuantity == 0){
           </a>
         </div>
         <div className="container mx-auto py-4">
-          <div className="flex   border-b pb-2 mb-4">
-            <div className="text-sm text-center w-[40vw] font-semibold text-gray-500 mb-2 md:mb-0">
+          <div className="grid grid-cols-3 border-b pb-2 mb-4">
+            <div className="text-sm text-center font-semibold text-gray-500 mb-2 md:mb-0">
               PRODUCT
             </div>
-            <div className="flex justify-center w-[60vw] gap-4 space-x-8 md:space-x-16">
-              <div className="text-sm font-semibold text-gray-500">
-                QUANTITY
-              </div>
-              <div className="text-sm font-semibold text-gray-500">
-                TOTAL
-              </div>
+            <div className="text-sm font-semibold text-gray-500 text-center">
+              QUANTITY
+            </div>
+            <div className="text-sm font-semibold text-gray-500 text-center">
+              TOTAL
             </div>
           </div>
-          <div className="flex   justify-between items-center mb-4">
-            <div className="flex items-center flex-col md:flex-row space-x-4 mb-4 md:mb-0">
+          <div className="grid grid-cols-3 items-center mb-4">
+            <div className="flex items-center justify-center flex-col md:flex-row space-x-4 mb-4 md:mb-0">
               <img
                 alt="Bitaxe Gamma 601 product image"
                 className="w-24 h-24 object-cover"
@@ -59,7 +57,7 @@ if(cartQuantity == 0){
                 </div>
               </div>
             </div>
-            <div className="flex    items-center  md:space-y-0 md:space-x-4 text-black">
+            <div className="flex justify-center items-center text-black">
               <div className="flex items-center border border-gray-500 w-fit py-1 md:py-2 rounded-sm">
                 <button
                   className="disabled:text-gray-400 disabled:cursor-not-allowed md:pl-2 py-1"
@@ -93,15 +91,15 @@ if(cartQuantity == 0){
                 </button>
               </div>
               <Trash
-                className=" h-3 md:h-4   cursor-pointer"
+                className=" h-3 md:h-4 ml-4 cursor-pointer"
                 onClick={() => {
                   removeCartQuantity(cartQuantity);
                   localStorage.setItem("cartQuantity", 0);
                 }}
               />
-              <div className="md:text-lg  text-black">
-                Rs. {Number(cartQuantity * 23990).toLocaleString('en-IN')}
-              </div>
+            </div>
+            <div className="text-center md:text-lg text-black">
+              Rs. {Number(cartQuantity * 23990).toLocaleString('en-IN')}
             </div>
           </div>
           <div className="border-t pt-4">
@@ -111,7 +109,7 @@ if(cartQuantity == 0){
                 Rs. {Number(cartQuantity * 23990).toLocaleString('en-IN')}
               </div>
             </div>
-            <div className="md:text-sm text-[0.7rem] text-center   m-auto  w-[80vw] text-gray-500 mb-4">
+            <div className="md:text-sm text-[0.7rem] text-center m-auto w-[80vw] text-gray-500 mb-4">
               Taxes included. Discounts and
               <a
                 className="text-blue-500 inline mx-1 underline"
