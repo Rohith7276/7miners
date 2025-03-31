@@ -16,7 +16,7 @@ const Navbar = () => {
       name: "Bitaxe Gamma 601",
       price: 23990,
       image: "https://7miners.in/cdn/shop/files/800-800-max-1.png?v=1742201216&width=713",
-      link: "/product/bitaxe-gamma-601",
+      link: "/products/bitaxe",
     }
   ]
   const [searchItems, setSearchItems] = useState([])
@@ -94,7 +94,7 @@ const Navbar = () => {
               placeholder='Search...'
               onChange={handleSearch}
               onBlur={() => setSearch(false)}
-              autoFocus
+               
             />
             <div className='w-full m-auto'>
               {searchItems.length > 0 ? (
