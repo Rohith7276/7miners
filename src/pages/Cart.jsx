@@ -109,7 +109,7 @@ if(cartQuantity == 0){
                 Rs. {Number(cartQuantity * 23990).toLocaleString('en-IN')}
               </div>
             </div>
-            <div className="md:text-sm text-[0.7rem] text-center m-auto w-[80vw] text-gray-500 mb-4">
+            <div className="md:text-sm text-[0.7rem] text-center md:text-end  w-full  text-gray-500 mb-4">
               Taxes included. Discounts and
               <a
                 className="text-blue-500 inline mx-1 underline"
