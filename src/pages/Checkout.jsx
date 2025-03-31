@@ -28,45 +28,52 @@ const Checkout = () => {
     const [handlePayment, setHandlePayment] = useState(false)
 
     const chekOut = async (details) => {
+        console.log('details', details.userBillingAddress?.billingAddress || 'No billing address provided');
+        console.log('details', details.shippingAddress?.address || 'No shipping address provided');
         const sendEmail = emailOffers ? "\nEmail Offers: Yes" : "\nEmail Offers: No"
 
         emailjs
             .send(
-                import.meta.env.VITE_APP_EMAILJS_SERVICE_ID,
-                import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID,
+                import.meta.env.VITE_APP_EMAILJS_SERVICE_ID || '',
+                import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID || '',
                 {
                     from_name: details.shippingAddress.firstName + " " + details.shippingAddress.lastName,
                     to_name: "Anand",
                     message: `Order Placed:
-    Customer Details:
-    Email/Phone No: ${details.shippingAddress.contact}
-    First Name: ${firstName}
-    Last Name: ${lastName}
+        Customer Details:
+            Email/Phone No: ${contact}
+            First Name: ${firstName}
+            Last Name: ${lastName}
 
-    Product Details:
-    Product Name: Bitaxe Gamma 601
-    Quantity: ${cartQuantity}
-    Total Amount: ₹${Number(cartQuantity * 23990).toLocaleString('en-IN')}
-    Transaction ID: ${transactionId}
+        Product Details:
+            Product Name: Bitaxe Gamma 601
+            Quantity: ${cartQuantity}
+            Total Amount: ₹${Number(cartQuantity * 23990).toLocaleString('en-IN')}
+            Transaction ID: ${transactionId}
 
-    Shipping Address:
-    Address: ${details.shippingAddress.address}
-    Apartment: ${details.shippingAddress.apartment}
-    City: ${details.shippingAddress.city}
-    State: ${details.shippingAddress.state}
-    PinCode: ${details.shippingAddress.pinCode}
-    Country: ${details.shippingAddress.country}
-    Contact: ${details.shippingAddress.contact}
+        Shipping Address:
+            First Name: ${details.shippingAddress.firstName}
+            Last Name: ${details.shippingAddress.lastName}
+            Address: ${details.shippingAddress.address}
+            Apartment: ${details.shippingAddress.apartment}
+            City: ${details.shippingAddress.city}
+            State: ${details.shippingAddress.state}
+            PinCode: ${details.shippingAddress.pinCode}
+            Country: ${details.shippingAddress.country}
+            Contact: ${details.shippingAddress.contact}
 
-    Billing Address:
-    Address: ${details.userBillingAddress.address}
-    Apartment: ${details.userBillingAddress.apartment}
-    City: ${details.userBillingAddress.city}
-    State: ${details.userBillingAddress.state}
-    PinCode: ${details.userBillingAddress.pinCode}
-    Country: ${details.userBillingAddress.country}${sendEmail}`,
+        Billing Address:
+            First Name: ${details.userBillingAddress.billingFirstName}
+            Last Name: ${details.userBillingAddress.billingLastName}
+            Address: ${details.userBillingAddress.billingAddress}
+            Apartment: ${details.userBillingAddress.billingApartment}
+            City: ${details.userBillingAddress.billingCity}
+            State: ${details.userBillingAddress.billingState}
+            PinCode: ${details.userBillingAddress.billingPinCode}
+            Country: ${details.userBillingAddress.billingCountry}
+    ${sendEmail}`,
                 },
-                import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY
+                import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY || ''
             )
             .then(
                 () => {
@@ -100,6 +107,7 @@ try {
         let details;
         if (!billingSameAsShipping) {
             let userBillingAddress = {
+
                 billingCountry,
                 billingFirstName,
                 billingLastName,
@@ -111,7 +119,19 @@ try {
             }
             details = { shippingAddress, userBillingAddress }
         }
-        else details = { shippingAddress, userBillingAddress: shippingAddress }
+        else {
+            let userBillingAddress = {
+                billingCountry: country,
+                billingFirstName: firstName,
+                billingLastName: lastName,
+                billingAddress: address,
+                billingApartment: apartment,
+                billingCity: city,
+                billingState: state,
+                billingPinCode: pinCode
+            }
+            details = { shippingAddress, userBillingAddress }
+        }
         if (saveInfo) {
             localStorage.setItem('shippingAddress', shippingAddress)
             if (!billingSameAsShipping) {
@@ -136,7 +156,7 @@ try {
         chekOut(details)
 
         alert("Order Placed Successfully")
-        window.location.href = '/';
+        // window.location.href = '/';
     } catch (error) {
         alert("Some error has been occured")
     }
