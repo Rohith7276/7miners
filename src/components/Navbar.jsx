@@ -70,8 +70,7 @@ const {cartQuantity}= useCartStore()
         <a href='\contact' className={`${path == "/contact" ? "border-black" : "border-transparent"} text-xs md:text-sm navAnimate opacity-0 my-3 h-[1.3rem] cursor-pointer border-b hover:border-black`}>Contact</a>
       </ul>
       <div className='flex gap-4 md:gap-6 lg:gap-9 justify-start mr-3 items-center'>
-        <div className='navAnimate opacity-0 w-5 md:w-7'><Search className='text-gray-700 w-fit h-[1.5rem] md:h-[1.7rem] hover:h-[1.6rem] md:hover:h-[1.8rem] navAnimate opacity-0 cursor-pointer' /></div>
-        <a href='/login' className='navAnimate opacity-0 w-5 md:w-7'><User className='text-gray-700 hover:h-[1.6rem] md:hover:h-[1.8rem] w-fit h-[1.5rem] md:h-[1.7rem] navAnimate opacity-0 cursor-pointer' /></a>
+           <a href='/login' className='navAnimate opacity-0 w-5 md:w-7'><User className='text-gray-700 hover:h-[1.6rem] md:hover:h-[1.8rem] w-fit h-[1.5rem] md:h-[1.7rem] navAnimate opacity-0 cursor-pointer' /></a>
         <a className='navAnimate opacity-0 w-5 md:w-7' href='/cart'>
           <ShoppingBag className='text-gray-700 hover:h-[1.6rem] md:hover:h-[1.8rem] w-fit h-[1.5rem] md:h-[1.7rem] cursor-pointer' />
           {cartQuantity !== 0 && (
