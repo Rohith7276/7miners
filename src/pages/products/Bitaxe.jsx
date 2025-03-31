@@ -126,20 +126,20 @@ const Bitaxe = () => {
                                            <div className='flex text-3xl w-fit mb-20 lg:mb-0 items-center gap-3'>
                
                                                <a className='h-10 w-10 flex items-center justify-center' href="https://www.facebook.com/sharer/sharer.php?u=https://7miners.in" target="_blank">
-                                                   <Facebook className='hover:w-[1.8rem] hover:h-[1.8rem]' />
+                                                   <Facebook className=' ' />
                                                </a>
                
                                                <a className='h-10 w-10 flex items-center justify-center' href="https://twitter.com/intent/tweet?url=https://7miners.in&text=Check this out!" target="_blank">
                
-                                                   <img className='w-6 hover:w-7 h-fit' src="https://imgs.search.brave.com/evybPWRZLyxZqDPmmjXT7nIRayQKJKENykRKzL86ml4/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly92aW1t/LmNvbS93cC1jb250/ZW50L3VwbG9hZHMv/MjAyMy8wOC90d2l0/dGVyLWNoYW5nZXMt/dG8teC5wbmc" alt="x" />
+                                                   <img className='w-6   h-fit' src="https://imgs.search.brave.com/evybPWRZLyxZqDPmmjXT7nIRayQKJKENykRKzL86ml4/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly92aW1t/LmNvbS93cC1jb250/ZW50L3VwbG9hZHMv/MjAyMy8wOC90d2l0/dGVyLWNoYW5nZXMt/dG8teC5wbmc" alt="x" />
                                                </a>
                
                                                <a className='h-10 w-10 flex items-center justify-center' href="https://api.whatsapp.com/send?text=Check this out! https://7miners.in" target="_blank">
-                                                   <img className='w-5 brightness-0 hover:w-7 contrast-200 h-fit' src="https://imgs.search.brave.com/1_lYKyfLRXThu0LN4vcKf46xi0zCuhTZlf7k-fWGT6Q/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9zdGF0/aWMtMDAuaWNvbmR1/Y2suY29tL2Fzc2V0/cy4wMC93aGF0c2Fw/cC1pY29uLTI1Nngy/NTYtbGtpZzlybzEu/cG5n" alt="whatsapp" />
+                                                   <img className='w-5 brightness-0  contrast-200 h-fit' src="https://imgs.search.brave.com/1_lYKyfLRXThu0LN4vcKf46xi0zCuhTZlf7k-fWGT6Q/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9zdGF0/aWMtMDAuaWNvbmR1/Y2suY29tL2Fzc2V0/cy4wMC93aGF0c2Fw/cC1pY29uLTI1Nngy/NTYtbGtpZzlybzEu/cG5n" alt="whatsapp" />
                                                </a>
                
                                                <a className='h-10 w-10  flex items-center justify-center' href="https://www.linkedin.com/shareArticle?mini=true&url=https://7miners.in&title=Awesome%20Website" target="_blank">
-                                                   <Linkedin className='hover:w-[1.8rem] hover:h-[1.8rem]' />
+                                                   <Linkedin className=' ' />
                                                </a>
                                            </div> 
                            </div>

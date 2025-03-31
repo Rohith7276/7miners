@@ -126,7 +126,7 @@ const Home = () => {
                             <div className='flex text-3xl w-fit items-center gap-3'>
 
                                 <a className='h-10 w-10 flex items-center justify-center' href="https://www.facebook.com/sharer/sharer.php?u=https://7miners.in" target="_blank">
-                                    <Facebook className='hover:w-[1.8rem] hover:h-[1.8rem]' />
+                                    <Facebook className='   ' />
                                 </a>
 
                                 <a className='h-10 w-10 flex items-center justify-center' href="https://twitter.com/intent/tweet?url=https://7miners.in&text=Check this out!" target="_blank">
@@ -139,7 +139,7 @@ const Home = () => {
                                 </a>
 
                                 <a className='h-10 w-10 flex items-center justify-center' href="https://www.linkedin.com/shareArticle?mini=true&url=https://7miners.in&title=Awesome%20Website" target="_blank">
-                                    <Linkedin className='hover:w-[1.8rem] hover:h-[1.8rem]' />
+                                    <Linkedin className=' ' />
                                 </a>
                             </div>
                             <a href='/products/bitaxe' className='flex text-sm hover:gap-2 items-center mb-9 lg:mb-0 justify-start w-full md:w-[9vw] mt-4 md:mt-0'>View full details <MoveRight className="h-3" /></a>
