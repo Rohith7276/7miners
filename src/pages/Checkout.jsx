@@ -151,6 +151,7 @@ try {
         chekOut(details)
 
         alert("Order Placed Successfully") 
+        window.location.pathname = "/"
     } catch (error) {
         alert("Some error has been occured")
     }
