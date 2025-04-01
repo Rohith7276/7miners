@@ -8,8 +8,7 @@ const Login = () => {
   const [signIn, setSignIn] = useState(true)
    const [user, setUser] = useState(null)
    useEffect(() => {
-     let x = localStorage.getItem("user")
-     console.log(x)
+     let x = localStorage.getItem("user") 
      if (x) {
        setUser(x)
      }

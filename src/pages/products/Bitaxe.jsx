@@ -68,8 +68,7 @@ const Bitaxe = () => {
             element.style.display = "block"
         });
         addCartAnimation()
-        localStorage.setItem("cartQuantity", parseInt(x) + quantity)
-        console.log('cartQuantity', cartQuantity)
+        localStorage.setItem("cartQuantity", parseInt(x) + quantity) 
     }
 
     useEffect(() => {

@@ -27,9 +27,7 @@ const Checkout = () => {
    const [transactionId, setTransactionId] = useState('')
     const [handlePayment, setHandlePayment] = useState(false)
 
-    const chekOut = async (details) => {
-        console.log('details', details.userBillingAddress?.billingAddress || 'No billing address provided');
-        console.log('details', details.shippingAddress?.address || 'No shipping address provided');
+    const chekOut = async (details) => { 
         const sendEmail = emailOffers ? "\nEmail Offers: Yes" : "\nEmail Offers: No"
 
         emailjs
@@ -148,15 +146,11 @@ try {
                 localStorage.setItem('userBillingAddress', userBillingAddress)
             }
             else localStorage.setItem('userBillingAddress', shippingAddress)
-        }
-        console.log('details: ', details);
-        setHandlePayment(true)
-        // window.location.href = '/';
-        // Use EmailJS official client for sending emails
+        } 
+        setHandlePayment(true) 
         chekOut(details)
 
-        alert("Order Placed Successfully")
-        // window.location.href = '/';
+        alert("Order Placed Successfully") 
     } catch (error) {
         alert("Some error has been occured")
     }

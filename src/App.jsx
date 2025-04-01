@@ -21,8 +21,7 @@ import Login from "./pages/Login";
 const App = () => {
   const { getCart } = useCartStore()
   useEffect(() => {
-    getCart()
-    console.log(parseInt(localStorage.getItem("cartQuantity")))
+    getCart() 
   }, [])
 
 

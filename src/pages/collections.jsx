@@ -14,57 +14,53 @@ const collections = () => {
     const [items, setItems] = useState(products)
     const [sort, setSort] = useState('Alphabetically, A-Z');
     const handleSort = (e)=>{
-        setSort(e)
-        console.log('e', e)
+        setSort(e) 
         if(e == "title-asceding"){
             let x = [...products].sort((a, b) => a.name.localeCompare(b.name))
-            setItems(x)
-            console.log('x', x)
+            setItems(x) 
         }
         if(e == "title-descending"){
             let x = [...products].sort((a, b) => b.name.localeCompare(a.name))
-            setItems(x)
-            console.log('x', x)
+            setItems(x) 
         }
         if(e == "price-ascending"){
             let x = [...products].sort((a, b) => a.price - b.price)
-            setItems(x)
-            console.log('x', x)
+            setItems(x) 
         }
         if(e == "price-descending"){
             let x = [...products].sort((a, b) => b.price - a.price)
             setItems(x)
-            console.log('x', x)
+         
         }
         if(e == "created-ascending"){
             let x = [...products].sort((a, b) => a.id - b.id)
             setItems(x)
-            console.log('x', x)
+         
         }
         if(e == "created-descending"){
             let x = [...products].sort((a, b) => b.id - a.id)
             setItems(x)
-            console.log('x', x)
+         
         }
         if(e == "best-selling"){
             let x = [...products].sort((a, b) => b.price - a.price)
             setItems(x)
-            console.log('x', x)
+         
         } 
         if(e == "featured"){
             let x = [...products].sort((a, b) => a.id - b.id)
             setItems(x)
-            console.log('x', x)
+         
         }
         if(e == "availability"){
             let x = [...products].sort((a, b) => a.id - b.id)
             setItems(x)
-            console.log('x', x)
+         
         }
         if(e == "best-selling"){
             let x = [...products].sort((a, b) => b.price - a.price)
             setItems(x)
-            console.log('x', x)
+         
         }
        
 

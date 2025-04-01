@@ -3,10 +3,7 @@ import { create } from "zustand";
 export const useCartStore = create((set, get) => ({
   quantity: 1,
   cartQuantity: 0,
-
-  temp: async () => { 
-    console.log("temp function called");
-  },
+ 
 
   getCart: ()=> set(()=> ({ cartQuantity: parseInt(localStorage.getItem("cartQuantity")) || 0 })),
   addToCart: () => {
