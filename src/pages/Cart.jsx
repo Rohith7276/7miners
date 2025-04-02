@@ -7,7 +7,7 @@ const Cart = () => {
   const {  addCartQuantity, removeCartQuantity, cartQuantity, addToCart, setCart } = useCartStore() 
   const [Cart, setcart] = useState(cartQuantity)
   useEffect(() => {
-    setcart(cartQuantity)
+    setcart(cartQuantity) 
    
   }, [cartQuantity])
   

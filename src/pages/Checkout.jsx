@@ -24,10 +24,10 @@ const Checkout = () => {
     const [billingCity, setBillingCity] = useState('');
     const [billingState, setBillingState] = useState('Karnataka');
     const [billingPinCode, setBillingPinCode] = useState('');
-   const [transactionId, setTransactionId] = useState('')
+    const [transactionId, setTransactionId] = useState('')
     const [handlePayment, setHandlePayment] = useState(false)
 
-    const chekOut = async (details) => { 
+    const chekOut = async (details) => {
         const sendEmail = emailOffers ? "\nEmail Offers: Yes" : "\nEmail Offers: No"
 
         emailjs
@@ -81,59 +81,31 @@ const Checkout = () => {
                     console.error("Failed to send email:", error);
                 }
             );
-        };
-        const handleCompleteOrder = () => {
-            // Handle order completion logic here
-try {
-    
-    if (!contact || !transactionId || !lastName || !address || !city || !pinCode) {
-        alert('Please fill in all required fields.');
-        return;
-    }
-    let shippingAddress = {
-        contact,
-            country,
-            firstName,
-            lastName,
-            address,
-            apartment,
-            city,
-            state,
-            pinCode,
-        }
+    };
+    const handleCompleteOrder = () => {
+        // Handle order completion logic here
+        try {
 
-        let details;
-        if (!billingSameAsShipping) {
-            let userBillingAddress = {
+            if (!contact || !transactionId || !lastName || !address || !city || !pinCode) {
+                alert('Please fill in all required fields.');
+                return;
+            }
+            let shippingAddress = {
+                contact,
+                country,
+                firstName,
+                lastName,
+                address,
+                apartment,
+                city,
+                state,
+                pinCode,
+            }
 
-                billingCountry,
-                billingFirstName,
-                billingLastName,
-                billingAddress,
-                billingApartment,
-                billingCity,
-                billingState,
-                billingPinCode
-            }
-            details = { shippingAddress, userBillingAddress }
-        }
-        else {
-            let userBillingAddress = {
-                billingCountry: country,
-                billingFirstName: firstName,
-                billingLastName: lastName,
-                billingAddress: address,
-                billingApartment: apartment,
-                billingCity: city,
-                billingState: state,
-                billingPinCode: pinCode
-            }
-            details = { shippingAddress, userBillingAddress }
-        }
-        if (saveInfo) {
-            localStorage.setItem('shippingAddress', shippingAddress)
+            let details;
             if (!billingSameAsShipping) {
                 let userBillingAddress = {
+
                     billingCountry,
                     billingFirstName,
                     billingLastName,
@@ -143,17 +115,45 @@ try {
                     billingState,
                     billingPinCode
                 }
-                localStorage.setItem('userBillingAddress', userBillingAddress)
+                details = { shippingAddress, userBillingAddress }
             }
-            else localStorage.setItem('userBillingAddress', shippingAddress)
-        } 
-        setHandlePayment(true) 
-        chekOut(details)
+            else {
+                let userBillingAddress = {
+                    billingCountry: country,
+                    billingFirstName: firstName,
+                    billingLastName: lastName,
+                    billingAddress: address,
+                    billingApartment: apartment,
+                    billingCity: city,
+                    billingState: state,
+                    billingPinCode: pinCode
+                }
+                details = { shippingAddress, userBillingAddress }
+            }
+            if (saveInfo) {
+                localStorage.setItem('shippingAddress', shippingAddress)
+                if (!billingSameAsShipping) {
+                    let userBillingAddress = {
+                        billingCountry,
+                        billingFirstName,
+                        billingLastName,
+                        billingAddress,
+                        billingApartment,
+                        billingCity,
+                        billingState,
+                        billingPinCode
+                    }
+                    localStorage.setItem('userBillingAddress', userBillingAddress)
+                }
+                else localStorage.setItem('userBillingAddress', shippingAddress)
+            }
+            setHandlePayment(true)
+            chekOut(details)
 
-        alert("Order Placed Successfully") 
-    } catch (error) {
-        alert("Some error has been occured")
-    }
+            alert("Order Placed Successfully")
+        } catch (error) {
+            alert("Some error has been occured")
+        }
     }
 
     return (
@@ -168,7 +168,7 @@ try {
                             placeholder="Email or mobile phone number"
                             value={contact}
                             onChange={(e) => setContact(e.target.value)}
-                            />
+                        />
                         <div className="flex items-center mt-2">
                             <input
                                 type="checkbox"
@@ -273,10 +273,13 @@ try {
                     </div>
                     <h2 className="text-xl font-semibold mt-6 mb-4">Payment</h2>
                     <div>
-                        <label className="block text-sm font-medium text-gray-700">UPI ID : </label>
+                        <label className="block text-sm font-medium text-gray-700">UPI ID : <span className='text-blue-500 cursor-pointer border-b border-transparent hover:border-black ' onClick={() => {
+                            navigator.clipboard.writeText("7miners.in@axl");
+                            alert("UPI ID copied to clipboard!");
+                        }}>7miners.in@axl</span></label>
                         <p className="text-[1rem] text-gray-700 mb-4">Please pay <span className='font-bold'> ₹{Number(cartQuantity * 23990).toLocaleString('en-IN')}</span> to the provided UPI ID and enter the transaction id for completing the order.</p>
 
-                        <input placeholder='Please Enter Transaction Id' className="w-full mb-6 p-2 border border-gray-300 text-sm rounded" type="text"   onChange={(e) => setTransactionId(e.target.value)} />
+                        <input placeholder='Please Enter Transaction Id' className="w-full mb-6 p-2 border border-gray-300 text-sm rounded" type="text" onChange={(e) => setTransactionId(e.target.value)} />
                     </div>
                     <div className="p-4 border border-blue-500 rounded mb-4">
                         <p className="font-semibold mb-2">Payments only processed through UPI or Cash</p>
