@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import emailjs from "@emailjs/browser";
 
 const Contact = () => {
@@ -6,9 +6,29 @@ const [email, setEmail] = useState("")
 const [message, setMessage] = useState("")
 const [name, setName] = useState("")
 const [phone, setPhone] = useState("")
-  const handleSubmit = async () => {  
+const [loading, setLoading] = useState(false)
+  // Removed duplicate handleSubmit function
+  const isValidEmail = (email) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  };
+
+  useEffect(() => {
+    console.log(loading)
+   
+  }, [loading])
+  
+
+  const handleSubmit = () => {  
+    setLoading(true)
+    if (!isValidEmail(email)) {
+      alert("Please enter a valid email address.");
+    setLoading(false)
+
+      return;
+    }
+
     try {
-      
       emailjs
       .send(
             import.meta.env.VITE_APP_EMAILJS_SERVICE_ID,
@@ -16,22 +36,28 @@ const [phone, setPhone] = useState("")
             {
                 from_name: name,
                 to_name: "Anand",
-                message: "From: \nEmail:"+ email + "\nName: " + name+ "\nMessage: " + message,
+                message: "From: \nEmail:"+ email + "\nPhone No: " + phone+ "\nName: " + name+ "\nMessage: " + message,
             },
             import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY
         )
         .then(
-            () => {
-                console.log("Email sent successfully");
-            },
-            (error) => {
-                console.error("Failed to send email:", error);
+          () => {
+            alert("Email sent successfully");
+          },
+          (error) => {
+                alert("Email couldn't be sent");
+                console.log(error);
             }
-        );
+          )
+          .finally(() => {
+            setLoading(false);
+          });
       } catch (error) {
         console.error("Error sending email:", error);
+        setLoading(false);
       }
     };
+
   return (
     <div className="w-full flex flex-col min-h-[72vh] m-auto mt-28 p-8">
       <div className='max-w-lg mx-auto mb-8'>
@@ -42,9 +68,9 @@ const [phone, setPhone] = useState("")
           <input type="text" placeholder="Name" className="w-1/2 p-2 border border-gray-300" value={name} onChange={(e)=>setName(e.target.value)}/>
           <input type="email" value={email} onChange={(e)=>setEmail(e.target.value)} placeholder="Email" className="w-1/2 p-2 border border-gray-300" />
         </div>
-        <input type="text" placeholder="Phone number" className="w-full p-2 border border-gray-300"  value={phone} onChange={(e)=>setPhone(e.target.value)}/>
-        <textarea  value={message} onChange={(e)=>setMessage(e.target.value)}  placeholder="Comment" className="w-full p-2 border border-gray-300 h-32"></textarea>
-        <button onClick={handleSubmit}   className="px-6 py-2 bg-black text-white">Send</button>
+        <input type="text" placeholder="Phone number" className="w-full p-2 border border-gray-300" value={phone} onChange={(e)=>setPhone(e.target.value)}/>
+        <textarea value={message} onChange={(e)=>setMessage(e.target.value)} placeholder="Comment" className="w-full p-2 border border-gray-300 h-32"></textarea>
+        <button onClick={handleSubmit} className={`px-6 w-28 py-2 bg-black ${loading? "cursor-wait bg-gray-500" : ""}  text-white`} disabled={loading} >{loading? "Loading...": "Send"}</button>
       </div>
 
       </div>

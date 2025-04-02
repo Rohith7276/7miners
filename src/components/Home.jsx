@@ -64,12 +64,12 @@ const Home = () => {
     const handleAddToCart = () => {
         let x = localStorage.getItem("cartQuantity")
         addToCart()
-       Array.from(document.getElementsByClassName("cartAppear")).forEach(element => {
+        Array.from(document.getElementsByClassName("cartAppear")).forEach(element => {
             element.style.display = "block"
         });
         addCartAnimation()
-        if(x)localStorage.setItem("cartQuantity", parseInt(x) + quantity)
-            else localStorage.setItem("cartQuantity", quantity) 
+        if (x) localStorage.setItem("cartQuantity", parseInt(x) + quantity)
+        else localStorage.setItem("cartQuantity", quantity)
     }
 
     useEffect(() => {
@@ -92,17 +92,17 @@ const Home = () => {
                     <a href="/checkout" className='w-full'><button className='bg-black w-full h-[2.5rem] border border-white hover:border-black text-white rounded-sm px-3 mt-2 text-[0.7rem]'>Check out</button></a>
                     <a className='border-b border-gray-600 text-gray-500 text-[0.7rem] mt-3' href="/">Continue shopping</a>
                 </div>
-            </div>
-            <div className='flex flex-col md:flex-row m-8  items-top mx-4 md:mx-28'>
-                               <div className='postcard overflow-hidden border w-full ml-5 lg:ml-0 md:w-[50vw]  appear opacity-0 shadow-sm border-gray-100'>
+            </div>      <div className='flex m-8 mt-24 flex-col items-center lg:flex-row items-top lg:mx-28'>
+
+            <div className='postcard overflow-hidden mb-6   border w-full ml-[9vw] md:ml-[5vw] mt-4 md:w-[50vw]  appear opacity-0 shadow-sm border-gray-100'>
 
                     <SliderComponent />
                 </div>
-                <div ref={itemDiv} className='pt-8 md:pt-24 mx-6 lg:mx-0 w-full md:w-[43vw] gap-1 h-auto md:h-[50vh] justify-center flex flex-col px-4 md:px-20'>
+                <div ref={itemDiv} className=' md:mt-[-8vh]  mx-6 lg:mx-0 w-full md:w-[43vw] gap-1 h-auto   justify-center flex flex-col px-4 md:px-20'>
                     <p className='animate opacity-0 text-sm text-gray-500'>7MINERS</p>
                     <p className='animate opacity-0 text-3xl'>Bitaxe Gamma 601</p>
                     <div className='flex flex-col gap-1 my-3'>
-                        <h1 className='animate opacity-0 text-xl'> <span className='text-red-700'>Limited Time Offer!!!</span><br/><span className='text-4xl font-semibold text-blue-500'>7.59%</span> Off Till April 5th with free shipping! </h1>
+                        <h1 className='animate opacity-0 text-xl'> <span className='text-red-700'>Limited Time Offer!!!</span><br /><span className='text-4xl font-semibold text-blue-500'>7.59%</span> Off Till April 5th with free shipping! </h1>
                         <p className='animate opacity-0 mt-1 text-2xl'><span className='line-through text-sm'>Rs. ₹25,960</span> Rs. 23,990</p>
                         <p className='animate opacity-0 text-sm text-gray-500'>Taxes included. <a href='/shipping-policy' className='border-b hover:border-b-2 border-black'>Shipping</a> calculated at checkout.</p>
                     </div>
@@ -118,8 +118,8 @@ const Home = () => {
                             <a href='/checkout' className='w-full'> <button className='bg-black animate opacity-0 w-full h-[2.5rem] border border-white hover:border-black text-white rounded-sm px-3 mt-2 text-[0.7rem]' onClick={() => {
                                 let x = localStorage.getItem("cartQuantity")
                                 addToCart()
-                                if(x)localStorage.setItem("cartQuantity", parseInt(x) + quantity)
-                                    else localStorage.setItem("cartQuantity", quantity)
+                                if (x) localStorage.setItem("cartQuantity", parseInt(x) + quantity)
+                                else localStorage.setItem("cartQuantity", quantity)
                             }}>Buy it now</button></a>
                         </div>
                         <div className='flex flex-col  md:flex-row justify-between h-fit items-center animate opacity-0 mt-4'>
