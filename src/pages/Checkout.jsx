@@ -150,10 +150,18 @@ const Checkout = () => {
             setHandlePayment(true)
             chekOut(details)
 
+<<<<<<< HEAD
             alert("Order Placed Successfully")
         } catch (error) {
             alert("Some error has been occured")
         }
+=======
+        alert("Order Placed Successfully") 
+        window.location.pathname = "/"
+    } catch (error) {
+        alert("Some error has been occured")
+    }
+>>>>>>> b7abd0d2eafed0d4ee13455587714e6a7b448cd7
     }
 
     return (
@@ -273,7 +281,11 @@ const Checkout = () => {
                     </div>
                     <h2 className="text-xl font-semibold mt-6 mb-4">Payment</h2>
                     <div>
+<<<<<<< HEAD
                         <label className="block text-sm font-medium text-gray-700">UPI ID : <span className='text-blue-500 cursor-pointer border-b border-transparent hover:border-black ' onClick={() => {
+=======
+                      <label className="block text-sm font-medium text-gray-700">UPI ID : <span className='text-blue-500 cursor-pointer border-b border-transparent hover:border-black ' onClick={() => {
+>>>>>>> b7abd0d2eafed0d4ee13455587714e6a7b448cd7
                             navigator.clipboard.writeText("7miners.in@axl");
                             alert("UPI ID copied to clipboard!");
                         }}>7miners.in@axl</span></label>
