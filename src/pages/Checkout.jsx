@@ -274,7 +274,10 @@ try {
                     </div>
                     <h2 className="text-xl font-semibold mt-6 mb-4">Payment</h2>
                     <div>
-                        <label className="block text-sm font-medium text-gray-700">UPI ID : </label>
+                      <label className="block text-sm font-medium text-gray-700">UPI ID : <span className='text-blue-500 cursor-pointer border-b border-transparent hover:border-black ' onClick={() => {
+                            navigator.clipboard.writeText("7miners.in@axl");
+                            alert("UPI ID copied to clipboard!");
+                        }}>7miners.in@axl</span></label>
                         <p className="text-[1rem] text-gray-700 mb-4">Please pay <span className='font-bold'> ₹{Number(cartQuantity * 23990).toLocaleString('en-IN')}</span> to the provided UPI ID and enter the transaction id for completing the order.</p>
 
                         <input placeholder='Please Enter Transaction Id' className="w-full mb-6 p-2 border border-gray-300 text-sm rounded" type="text"   onChange={(e) => setTransactionId(e.target.value)} />
