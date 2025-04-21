@@ -149,20 +149,14 @@ const Checkout = () => {
             }
             setHandlePayment(true)
             chekOut(details)
-
-<<<<<<< HEAD
+ 
             alert("Order Placed Successfully")
         } catch (error) {
             alert("Some error has been occured")
-        }
-=======
+        } 
         alert("Order Placed Successfully") 
         window.location.pathname = "/"
-    } catch (error) {
-        alert("Some error has been occured")
-    }
->>>>>>> b7abd0d2eafed0d4ee13455587714e6a7b448cd7
-    }
+    } 
 
     return (
         <div className="w-screen mx-auto px-4 md:px-0 md:pl-8">
@@ -281,17 +275,12 @@ const Checkout = () => {
                     </div>
                     <h2 className="text-xl font-semibold mt-6 mb-4">Payment</h2>
                     <div>
-<<<<<<< HEAD
+ 
                         <label className="block text-sm font-medium text-gray-700">UPI ID : <span className='text-blue-500 cursor-pointer border-b border-transparent hover:border-black ' onClick={() => {
-=======
-                      <label className="block text-sm font-medium text-gray-700">UPI ID : <span className='text-blue-500 cursor-pointer border-b border-transparent hover:border-black ' onClick={() => {
->>>>>>> b7abd0d2eafed0d4ee13455587714e6a7b448cd7
-                            navigator.clipboard.writeText("7miners.in@axl");
-                            alert("UPI ID copied to clipboard!");
-                        }}>7miners.in@axl</span></label>
-                        <p className="text-[1rem] text-gray-700 mb-4">Please pay <span className='font-bold'> ₹{Number(cartQuantity * 23990).toLocaleString('en-IN')}</span> to the provided UPI ID and enter the transaction id for completing the order.</p>
-
-                        <input placeholder='Please Enter Transaction Id' className="w-full mb-6 p-2 border border-gray-300 text-sm rounded" type="text" onChange={(e) => setTransactionId(e.target.value)} />
+  
+                                navigator.clipboard.writeText("7miners.in@axl");
+                                alert("UPI ID copied to clipboard!");
+                            } }>7miners.in@axl</span></label><p className="text-[1rem] text-gray-700 mb-4">Please pay <span className='font-bold'> ₹{Number(cartQuantity * 23990).toLocaleString('en-IN')}</span> to the provided UPI ID and enter the transaction id for completing the order.</p><input placeholder='Please Enter Transaction Id' className="w-full mb-6 p-2 border border-gray-300 text-sm rounded" type="text" onChange={(e) => setTransactionId(e.target.value)} /> 
                     </div>
                     <div className="p-4 border border-blue-500 rounded mb-4">
                         <p className="font-semibold mb-2">Payments only processed through UPI or Cash</p>

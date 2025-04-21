@@ -92,13 +92,14 @@ const Home = () => {
                     <a href="/checkout" className='w-full'><button className='bg-black w-full h-[2.5rem] border border-white hover:border-black text-white rounded-sm px-3 mt-2 text-[0.7rem]'>Check out</button></a>
                     <a className='border-b border-gray-600 text-gray-500 text-[0.7rem] mt-3' href="/">Continue shopping</a>
                 </div>
-            </div>      <div className='flex m-8 mt-24 flex-col items-center lg:flex-row items-top lg:mx-28'>
+            </div>      
+            <div className='flex m-8 mt-24 flex-col items-center justify-center lg:flex-row items-top lg:mx-28 ml- [13vw]'> 
 
-            <div className='postcard overflow-hidden mb-6   border w-full ml-[9vw] md:ml-[5vw] mt-4 md:w-[50vw]  appear opacity-0 shadow-sm border-gray-100'>
+            <div className='postcard overflow-hidden mb-6   border w-full ml-[9vw] md:ml-[5vw] mt-4 md:w-[35vw]   appear opacity-0 shadow-sm border-gray-100'>
 
                     <SliderComponent />
                 </div>
-                <div ref={itemDiv} className=' md:mt-[-8vh]  mx-6 lg:mx-0 w-full md:w-[43vw] gap-1 h-auto   justify-center flex flex-col px-4 md:px-20'>
+                <div ref={itemDiv} className=' md:mt-[-3rem]  mx-6 lg:mx-0 w-full md:w-[38rem] gap-1 h-auto   justify-center flex flex-col px-4 md:px-20'>
                     <p className='animate opacity-0 text-sm text-gray-500'>7MINERS</p>
                     <p className='animate opacity-0 text-3xl'>Bitaxe Gamma 601</p>
                     <div className='flex flex-col gap-1 my-3'>

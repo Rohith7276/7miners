@@ -66,7 +66,7 @@ export const SliderComponent = () => {
         <Slide {...zoomInProperties}>
          {slideImages.map((slideImage, index)=> (
             <div key={index} className='m-auto flex justify-center  h-full items-center'>
-              <img src={slideImage.url} className='imaage w-[60%]   m-auto' alt="" /> 
+              <img src={slideImage.url} className='imaage w-[80%]   m-auto' alt="" /> 
             </div>
           ))} 
         </Slide>
