@@ -98,7 +98,7 @@ const Bitaxe = () => {
 
                     <SliderComponent />
                 </div> 
-                <div ref={itemDiv} className=' md:mt-[-3rem]  mx-6 lg:mx-0 w-full md:w-[38rem] gap-1 h-auto   justify-center flex flex-col px-4 md:px-20'>
+                <div ref={itemDiv} className=' md:mt-[-3rem]  mx-6 lg:mx-0 w-full md:w-[36rem] gap-1 h-auto   justify-center flex flex-col px-4 md:px-20'>
                     <p className='animate opacity-0 text-sm text-gray-500'>7MINERS</p>
                     <p className='animate opacity-0 text-3xl'>Bitaxe Gamma 601</p>
                     <div className='flex flex-col gap-1 my-3'>

@@ -72,8 +72,9 @@ const Navbar = () => {
   }, [])
 
   return (
-    <nav className='flex z-[100] w-screen justify-between items-center bg-white py-3 border-b-2 border-gray-200 px-2 md:px-12 lg:px-36 fixed top-0 left-0 z-50 transition-transform duration-300'>
-      <ul className='flex gap-4 text-sm justify-center items-center text-gray-700'>
+    <nav className='flex z-[100] w-screen  justify-between items-center bg-white py-3 border-b-2 border-gray-200 px-2 md:px-12 lg:px-36 fixed top-0 left-0 z-50 transition-transform duration-300'>
+      <div className=' md:w-[60vw] w-full flex justify-between m-auto'>
+      <ul className='flex gap-4 text-sm justify-centeritems-center text-gray-700'>
         <a href='/' className='text-xl md:text-2xl navAnimate opacity-0 lg:mr-4 text-gray-800'>7miners.in</a>
         <a href='/' className={`${path === "/" ? "border-black hover:border-b-2" : "border-transparent"} text-xs md:text-sm h-[1.3rem] navAnimate opacity-0 my-3 cursor-pointer border-b hover:border-black`}>Home</a>
         <a href='/catalog' className={`${path === "/catalog" ? "border-black" : "border-transparent"} text-xs md:text-sm navAnimate opacity-0 my-3 h-[1.3rem] cursor-pointer border-b hover:border-black`}>Catalog</a>
@@ -124,6 +125,7 @@ const Navbar = () => {
             </div>
           )}
         </a>
+      </div>
       </div>
     </nav>
   );
