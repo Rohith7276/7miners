@@ -76,7 +76,7 @@ const [loading, setLoading] = useState(false)
       </div>
 
       <div className="flex flex-col md:flex-row m-auto gap-6 md:pl-28 pt-20 items-center md:items-start">
-   <img alt="7miners" className="w-screen md:w-1/2" height="400" src="https://7miners.in/cdn/shop/files/9-scaled.jpg?v=1742214556&width=750" width="600"/>
+   <img alt="7miners" className="w-screen md:w-1/2" height="400"  src={`/${1}.jpg`} width="600"/>
 
    <div className="p-8 w-fit ">
     <h1 className="text-3xl font-semibold mb-4">
