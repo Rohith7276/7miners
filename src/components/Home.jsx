@@ -84,7 +84,7 @@ const Home = () => {
                 <button onClick={() => exitCartAnimation()} className='cursor-pointer flex justify-end w-full'><X className='h-6' /></button>
                 <h4 className='text-[0.7rem] text-gray-600 mb-2 flex'><Check className='h-4' />Item added to your cart</h4>
                 <div className='flex gap-4'>
-                    <img className='w-[4rem] border rounded-sm' src="https://7miners.in/cdn/shop/files/800-800-max-1.png?v=1742201216&width=713" alt="7miners" />
+                    <img className='w-[4rem] border rounded-sm' src={`/${1}.jpg`} alt="7miners" />
                     <h2 className='text-[0.7rem]'>Bitaxe Gamma 601</h2>
                 </div>
                 <div className='flex flex-col justify-center items-center mt-4'>

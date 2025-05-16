@@ -400,7 +400,7 @@ const Checkout = () => {
                 <div className="bg-gray-200 pt-10 md:pt-28 w-full md:w-[40vw] p-6 rounded-lg shadow-md">
                     <div className="flex items-center mb-4">
                         <img
-                            src="https://7miners.in/cdn/shop/files/800-800-max-1.png?v=1742201216&width=713"
+                            src={`/${1}.jpg`}
                             alt="Product image of Bitaxe Gamma 601"
                             className="w-16 h-16 rounded-sm mr-4"
                         />

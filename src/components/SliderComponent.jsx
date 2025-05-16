@@ -16,32 +16,7 @@ const divStyle = {
   backgroundSize: 'cover',
   height: '400px'
 }
-const slideImages = [
-  {
-    url: "https://7miners.in/cdn/shop/files/800-800-max-1.png?v=1742201216&width=713", 
-  },
-  {
-    url: '//7miners.in/cdn/shop/files/Bitaxe_Gamma_601_Solo_Miner_-_Coin_Mining_Central_1_740x_876f59a6-67e0-48c3-b471-b4d619de4ace.png?v=1742202078&width=1445', 
-  }, 
-  {
-    url: "//7miners.in/cdn/shop/files/Bitaxe_Gamma_601_01.jpg?v=1742202078&width=1445", 
-  },
-  {
-    url: "//7miners.in/cdn/shop/files/71TownN8TfL.jpg?v=1742202078&width=1445", 
-  },
-  {
-    url: "//7miners.in/cdn/shop/files/s-l11200.jpg?v=1742202078&width=1445", 
-  },
-  {
-    url: "//7miners.in/cdn/shop/files/s-1l1200.jpg?v=1742202078&width=1445", 
-  },
-  {
-    url: "//7miners.in/cdn/shop/files/s-l1600.jpg?v=1742202078&width=1445", 
-  },
-  {
-    url: "//7miners.in/cdn/shop/files/9-scaled.jpg?v=1742214556&width=1445", 
-  },
-];
+ 
 
 export const SliderComponent = () => {
   const zoomInProperties = {
@@ -63,12 +38,19 @@ export const SliderComponent = () => {
   };
     return (
       <div className={`hover:${"hovering"} slide-container  h-fit   `}>
-        <Slide {...zoomInProperties}>
-         {slideImages.map((slideImage, index)=> (
-            <div key={index} className='m-auto flex justify-center  h-full items-center'>
-              <img src={slideImage.url} className='imaage w-[80%]   m-auto' alt="" /> 
-            </div>
-          ))} 
+        <Slide {...zoomInProperties}> 
+            <div className='m-auto flex justify-center  h-full items-center'>
+              <img src={`/${1}.jpg`} className='imaage w-[100%]   m-auto' alt="" /> 
+            </div> 
+            <div className='m-auto flex justify-center  h-full items-center'>
+              <img src={`/${2}.jpg`} className='imaage w-[80%]   m-auto' alt="" /> 
+            </div> 
+            <div className='m-auto flex p-12 justify-center  h-full items-center'>
+              <img src={`/${3}.jpg`} className='imaage w-[80%]   m-auto' alt="" /> 
+            </div> 
+            <div className='m-auto flex justify-center  h-full items-center'>
+              <img src={`/${4}.jpg`} className='imaage w-[80%]   m-auto' alt="" /> 
+            </div> 
         </Slide>
       </div>
     )

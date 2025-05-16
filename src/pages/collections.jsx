@@ -129,7 +129,7 @@ const collections = () => {
 
                    <div className="flex flex-col border items-center">
                         <img
-                            src={product.image}
+                          src={`/${1}.jpg`}
                             alt={product.name}
                             className="mb-4"
                             width="300"

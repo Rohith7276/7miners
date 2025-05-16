@@ -45,7 +45,7 @@ if(cartQuantity == 0){
                 alt="Bitaxe Gamma 601 product image"
                 className="w-24 h-24 object-cover"
                 height="100"
-                src="https://7miners.in/cdn/shop/files/800-800-max-1.png?v=1742201216&width=713"
+                src={`/${1}.jpg`}
                 width="100"
               />
               <div>
