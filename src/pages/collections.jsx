@@ -66,7 +66,8 @@ const collections = () => {
 
     }
     return (
-        <div className="px-4 py-8 mt-24 text-[0.88rem] text-gray-700 mx-auto max-w-7xl">
+     <div className=" mt-24 text-[0.88rem] text-gray-700   py-[1rem]  px-[279px]
+       ">
             <h1 className="text-4xl font-bold mb-8">Products</h1>
             <div className="flex flex-col md:flex-row justify-between items-center mb-4 space-y-4 md:space-y-0">
                 <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4">
