@@ -79,7 +79,7 @@ const Home = () => {
 
 
     return (
-               <div className=''>
+          <div className=''>
             <div className='cartAppear fixed hidden justify-between opacity-0 top-[1.5rem] right-4 md:right-24 shadow-sm w-[90vw] md:w-[25vw] border   items-center  bg-white z-50 p-5'>
                 <button onClick={() => exitCartAnimation()} className='cursor-pointer flex justify-end w-full'><X className='h-6' /></button>
                 <h4 className='text-[0.7rem] text-gray-600 mb-2 flex'><Check className='h-4' />Item added to your cart</h4>
@@ -93,9 +93,9 @@ const Home = () => {
                     <a className='border-b border-gray-600 text-gray-500 text-[0.7rem] mt-3' href="/">Continue shopping</a>
                 </div>
             </div>      
-            <div className='flex my-8 justify-between mt-24 md:px-[279px] w-screen flex-col items-center lg:flex-row items-top  '> 
+            <div className='flex my-8 justify-between mt-24 md:w-[70rem] w-screen flex-col items-center lg:flex-row m-auto items-top  '> 
 
-            <div className='postcard overflow-hidden mb-6 ml-2  pl-[2rem] border w-full  mt-4 md:w-[35vw]   appear opacity-0 shadow-sm border-gray-100'>
+            <div className='postcard overflow-hidden mb-6 ml-11 px-5 md:px-0 md:ml-0 border w-full  mt-4 md:w-[35vw]  appear opacity-0 shadow-sm border-gray-100'>
 
                     <SliderComponent />
                 </div>
