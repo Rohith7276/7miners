@@ -79,8 +79,8 @@ const Home = () => {
 
 
     return (
-        <div className=''>
-            <div className='cartAppear fixed  hidden opacity-0 top-[1.5rem] right-4 md:right-24 shadow-sm w-[90vw] md:w-[25vw] border justify-center items-center  bg-white z-50 p-5'>
+       <div className=''>
+            <div className='cartAppear fixed hidden justify-center opacity-0 top-[1.5rem] right-4 md:right-24 shadow-sm w-[90vw] md:w-[25vw] border   items-center  bg-white z-50 p-5'>
                 <button onClick={() => exitCartAnimation()} className='cursor-pointer flex justify-end w-full'><X className='h-6' /></button>
                 <h4 className='text-[0.7rem] text-gray-600 mb-2 flex'><Check className='h-4' />Item added to your cart</h4>
                 <div className='flex gap-4'>
@@ -93,13 +93,13 @@ const Home = () => {
                     <a className='border-b border-gray-600 text-gray-500 text-[0.7rem] mt-3' href="/">Continue shopping</a>
                 </div>
             </div>      
-            <div className='flex m-8 mt-24 flex-col items-center justify-center lg:flex-row items-top lg:mx-28 ml- [13vw]'> 
+            <div className='flex my-8 mt-24 px-[279px] w-screen flex-col items-center lg:flex-row items-top  '> 
 
-            <div className='postcard overflow-hidden mb-6   border w-full ml-[9vw] md:ml-[5vw] mt-4 md:w-[35vw]   appear opacity-0 shadow-sm border-gray-100'>
+            <div className='postcard overflow-hidden mb-6 ml-2  border w-full  mt-4 md:w-[35vw]   appear opacity-0 shadow-sm border-gray-100'>
 
                     <SliderComponent />
                 </div>
-                <div ref={itemDiv} className=' md:mt-[-3rem]  mx-6 lg:mx-0 w-full md:w-[36rem] gap-1 h-auto   justify-center flex flex-col px-4 md:px-20'>
+                <div ref={itemDiv} className=' md:mt-[-3rem]  mx-6 lg:mx-0 w-full md:w-[36rem] gap-1 h-auto   justify-center flex flex-col px-4 md:pl-20'>
                     <p className='animate opacity-0 text-sm text-gray-500'>7MINERS</p>
                     <p className='animate opacity-0 text-3xl'>Bitaxe Gamma 601</p>
                     <div className='flex flex-col gap-1 my-3'>
