@@ -72,7 +72,7 @@ const Navbar = () => {
   }, [])
 
   return (
-          <nav className='flex z-[100]     w-screen  justify-between items-center bg-white py-3 border-b-2 border-gray-200 px-2 md:px-12   fixed top-0 left-0 z-50 transition-transform duration-300'>
+         <nav className='flex z-[100]     w-screen  justify-between items-center bg-white py-3 border-b-2 border-gray-200 px-2 md:px-12   fixed top-0 left-0 z-50 transition-transform duration-300'>
       <div className=' m-auto w-full !w-[70rem] flex justify-between  '>
       <ul className='flex gap-4 text-sm justify-centeritems-center text-gray-700'>
         <a href='/' className='text-xl md:text-2xl navAnimate opacity-0 lg:mr-4 text-gray-800'>7miners.in</a>
