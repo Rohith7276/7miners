@@ -19,11 +19,7 @@ if(cartQuantity == 0){
   </div>)
 }
   return (
-<<<<<<< HEAD
     <div className="flex flex-col items-start mt-24 min-h-[68vh] justify-center m-auto w-[90vw] md:w-[70rem] mb-11 bg-white text-gray-500">
-=======
-    <div className="flex flex-col items-start mt-24 min-h-[68vh] justify-center m-auto w-[90vw] md:w-[70vw] mb-11 bg-white text-gray-500">
->>>>>>> 70f785c1dfa85906da8ff9db2234dfabe94a9e95
       <div className="text-start w-full">
         <div className="flex flex-col md:flex-row justify-between mb-5 items-center">
           <h1 className="text-2xl text-black">Your Cart</h1>

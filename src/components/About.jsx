@@ -36,11 +36,7 @@ const About = () => {
     , [])
 
   return (
-<<<<<<< HEAD
        <div className=' opacity-0 aboutAnimate flex flex-col gap-3  m-auto lg-w-[70rem] mx-8 lg:mx-0 my-14'>
-=======
-       <div className=' opacity-0 aboutAnimate flex flex-col gap-3 mx-[10vw] lg-w-[70rem] lg:mx-[24vw] my-14'>
->>>>>>> 70f785c1dfa85906da8ff9db2234dfabe94a9e95
       <h1 className=' opacity-0 aboutAnimate text-3xl '>7miners</h1>
       <div className=' opacity-0 aboutAnimate flex flex-col my-3 gap-2'>
         <h2 className=' opacity-0 aboutAnimate text-lg font-bold text-gray-600'>Welcome to 7Miners - Bringing the Bitcoin Revolution to India</h2>
