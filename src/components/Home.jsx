@@ -95,11 +95,19 @@ const Home = () => {
             </div>      
             <div className='flex my-8 justify-between mt-24 md:w-[70rem] pl-5 w-screen flex-col items-center lg:flex-row m-auto items-top  '> 
 
+<<<<<<< HEAD
             <div className='postcard overflow-hidden mb-6 ml-6 px-5 md:px-0 md:ml-0 border w-full  mt-4 md:w-[35vw]  appear opacity-0 shadow-sm border-gray-100'>
 
                     <SliderComponent />
                 </div>
                 <div ref={itemDiv} className=' md:mt-[-3rem] pl-[2rem]   mx-6 lg:mx-0 w-full md:w-[36rem] gap-1 h-auto   justify-center flex flex-col px-4 md:pl-20'>
+=======
+            <div className='postcard overflow-hidden mb-6 ml-11 px-5 md:px-0 md:ml-0 border w-full  mt-4 md:w-[35vw]  appear opacity-0 shadow-sm border-gray-100'>
+
+                    <SliderComponent />
+                </div>
+                <div ref={itemDiv} className=' md:mt-[-3rem] pl-[4rem]   mx-6 lg:mx-0 w-full md:w-[36rem] gap-1 h-auto   justify-center flex flex-col px-4 md:pl-20'>
+>>>>>>> 70f785c1dfa85906da8ff9db2234dfabe94a9e95
                     <p className='animate opacity-0 text-sm text-gray-500'>7MINERS</p>
                     <p className='animate opacity-0 text-3xl'>Bitaxe Gamma 601</p>
                     <div className='flex flex-col gap-1 my-3'>
