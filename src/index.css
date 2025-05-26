@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* @import "react-slideshow-image/dist/styles.css"; */
+
+.postcard:hover .imaage {
+  transform: scale(1.06);
+}
+
+.imaage {
+  transition: all ease-in-out 0.5s;
+}
+
+.default-nav {
+  background-color: transparent !important;
+}
