@@ -14,8 +14,8 @@ const Navbar = () => {
     {
       id: 1,
       name: "Bitaxe Gamma 601",
-      price: 23990,
-      image: "https://7miners.in/cdn/shop/files/800-800-max-1.png?v=1742201216&width=713",
+      price: 25750,
+      image: `/1.jpg`,
       link: "/products/bitaxe",
     }
   ]
@@ -72,7 +72,7 @@ const Navbar = () => {
   }, [])
 
   return (
-         <nav className='flex z-[100]     w-screen  justify-between items-center bg-white py-3 border-b-2 border-gray-200 px-2 md:px-12   fixed top-0 left-0 z-50 transition-transform duration-300'>
+         <nav className='flex z-[100]     w-[99vw]  justify-between items-center bg-white py-3 border-b-2 border-gray-200 px-2 md:px-12   fixed top-0 left-0 z-50 transition-transform duration-300'>
       <div className=' m-auto w-full !w-[70rem] flex justify-between  '>
       <ul className='flex gap-4 text-sm justify-centeritems-center text-gray-700'>
         <a href='/' className='text-xl md:text-2xl navAnimate opacity-0 lg:mr-4 text-gray-800'>7miners.in</a>
@@ -87,8 +87,10 @@ const Navbar = () => {
             onClick={() => setSearch(!search)}
           />
         </div>
+        <div className='fixed  left-0 top-[3.5rem] md:top-[4.5rem]    flex flex-col gap-2 items-start w-full  ' >
+
         {search && (
-          <div className='fixed w-[60vw] left-[20vw] top-[3.5rem] md:top-[4.5rem] right-2 md:right-24 flex flex-col gap-2 items-start bg-white border border-gray-300 rounded-md shadow-md p-2'>
+          <div className='w-[60vw] md:w-[70rem] m-auto bg-white border border-gray-300 flex flex-col rounded-md p-2 shadow-md gap-2'>
             <input
               type="text"
               className='border border-gray-300 w-full rounded-md h-[1.8rem] md:h-[2rem] px-2 text-[0.7rem] md:text-sm'
@@ -100,9 +102,9 @@ const Navbar = () => {
               {searchItems.length > 0 ? (
                 searchItems.map((item) => (
                   <a
-                    key={item.id}
-                    href={item.link}
-                    className='flex gap-2 items-center border-b border-gray-300 py-2 hover:bg-gray-100 w-full px-2'
+                  key={item.id}
+                  href={item.link}
+                  className='flex gap-2 items-center border-b border-gray-300 py-2 hover:bg-gray-100 w-full px-2'
                   >
                     <img src={item.image} alt={item.name} className='w-36 h-36 object-cover rounded-md' />
                     <span className='text-sm text-gray-700'>{item.name}</span>
@@ -114,6 +116,7 @@ const Navbar = () => {
             </div>
           </div>
         )}
+        </div>
         <a href='/login' className='navAnimate opacity-0 w-5 md:w-7'>
           <User className='text-gray-700 hover:h-[1.6rem] md:hover:h-[1.8rem] w-fit h-[1.5rem] md:h-[1.7rem] navAnimate opacity-0 cursor-pointer' />
         </a>

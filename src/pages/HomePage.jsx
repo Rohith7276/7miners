@@ -9,7 +9,7 @@ const HomePage = () => {
 
 
   return (
-    <section className=' mt-28 '> 
+    <section className=' mt-[5rem] '> 
       <Home/>
     <About/>
 

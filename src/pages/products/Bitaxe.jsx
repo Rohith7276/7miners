@@ -91,7 +91,7 @@ const Bitaxe = () => {
                     <a className='border-b border-gray-600 text-gray-500 text-[0.7rem] mt-3' href="/">Continue shopping</a>
                 </div>
             </div>      
-            <div className='flex my-8 justify-between mt-24 md:w-[70rem] pl-5 w-screen flex-col items-center lg:flex-row m-auto items-top  '> 
+            <div className='flex my-8 justify-between md:w-[70rem] pl-5 w-[99vw] flex-col items-center lg:flex-row m-auto items-top  '> 
 
             <div className='postcard overflow-hidden mb-6 ml-11 px-5 md:px-0 md:ml-0 border w-full  mt-4 md:w-[35vw]  appear opacity-0 shadow-sm border-gray-100'>
 
@@ -101,12 +101,10 @@ const Bitaxe = () => {
                     <p className='animate opacity-0 text-sm text-gray-500'>7MINERS</p>
                     <p className='animate opacity-0 text-3xl'>Bitaxe Gamma 601</p>
                     <div className='flex flex-col gap-1 my-3'>
-
-                        <div className='flex flex-col gap-1 my-3'>
-                            <h1 className='animate opacity-0 text-xl'> <span className='text-red-700'>Limited Time Offer!!!</span><br /><span className='text-4xl font-semibold text-blue-500'>7.59%</span> Off Till April 5th with free shipping! </h1>
-                            <p className='animate opacity-0 mt-1 text-2xl'><span className='line-through text-sm'>Rs. ₹25,960</span> Rs. 23,990</p>
-                            <p className='animate opacity-0 text-sm text-gray-500'>Taxes included. <a href='/shipping-policy' className='border-b hover:border-b-2 border-black'>Shipping</a> calculated at checkout.</p>
-                        </div>        </div>
+  <div className='flex flex-col gap-1 my-3'>
+                         <p className='animate opacity-0 mt-1 text-2xl'> Rs. ₹25,750 </p>
+                        <p className='animate opacity-0 text-sm text-gray-500'>Taxes included. <a href='/shipping-policy' className='border-b hover:border-b-2 border-black'>Shipping</a> calculated at checkout.</p>
+                    </div>    </div>
                     <div className='flex flex-col  gap-1'>
                         <h3 className='opacity-0 text-sm text-gray-500 animate'>Quantity</h3>
                         <div className='flex animate opacity-0 items-center border border-gray-500 w-fit py-2 rounded-sm'>
@@ -146,7 +144,7 @@ const Bitaxe = () => {
                     </div>
                 </div>
             </div>
-            <section className='p-8 mx-10 lg:mx-52   lg:mt-[11vh] bg-gray-50'>
+            <section className='p-8 mx-10 lg:mx-52 mb-11  lg:mt-[11vh] bg-gray-50'>
                 <h2 className='text-xl font-bold mb-4'>THE BITAXE</h2>
                 <p className='mb-4'>The first open source hardware miner.</p>
                 <p className='mb-4'>The Bitaxe project is a single ASIC miner board fully open-source, who showcases reverse engineering of Bitmain’s mining chips. It currently has various versions, all primarily centered around a single ASIC mining chip.</p>

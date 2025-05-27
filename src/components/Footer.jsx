@@ -2,7 +2,7 @@ import React from 'react'
 
 const Footer = () => {
   return (
-<footer className='border-t bg-white sticky w-screen h-fit'>
+<footer className='border-t bg-white sticky w-[99vw] h-fit'>
   <div className="bg-white mt-11 pb-3 py-4">
     <div className="container mx-auto flex flex-col sm:flex-row justify-center items-center text-sm text-gray-500 text-center gap-4 sm:gap-6">
       <p className="mb-2 sm:mb-0">© 2025, <a href='/' className='hover:underline' rel="noopener noreferrer">7Miners.in</a></p>

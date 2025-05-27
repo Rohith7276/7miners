@@ -53,7 +53,7 @@ if(cartQuantity == 0){
                   Bitaxe Gamma 601
                 </div>
                 <div className="text-gray-500 text-[0.7rem]">
-                  Rs. {Number(23990).toLocaleString('en-IN')}
+                  Rs. {Number(25750).toLocaleString('en-IN')}
                 </div>
               </div>
             </div>
@@ -99,14 +99,14 @@ if(cartQuantity == 0){
               />
             </div>
             <div className="text-center md:text-lg text-black">
-              Rs. {Number(cartQuantity * 23990).toLocaleString('en-IN')}
+              Rs. {Number(cartQuantity * 25750).toLocaleString('en-IN')}
             </div>
           </div>
           <div className="border-t pt-4">
             <div className="flex flex-col md:flex-row justify-end items-center mb-2">
               <div className="text-[0.7rem] text-black">Estimated total</div>
               <div className="ml-0 md:ml-4 text-lg ">
-                Rs. {Number(cartQuantity * 23990).toLocaleString('en-IN')}
+                Rs. {Number(cartQuantity * 25750).toLocaleString('en-IN')}
               </div>
             </div>
             <div className="md:text-sm text-[0.7rem] text-center md:text-end  w-full  text-gray-500 mb-4">
