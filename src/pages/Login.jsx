@@ -19,6 +19,7 @@ const Login = () => {
     try {
        await createUserWithEmailAndPassword(auth, email, password);
       alert("Register successful") 
+      alert(email)
       localStorage.setItem("user", email)
       window.location.pathname = "/"
 

@@ -253,7 +253,7 @@ const Checkout = () => {
                         <div>
                             <label className="block text-sm font-medium text-gray-700">PIN code</label>
                             <input
-                                type="text"
+                                type="number"
                                 className="w-full p-2 border border-gray-300 text-sm rounded"
                                 value={pinCode}
                                 onChange={(e) => setPinCode(e.target.value)}
@@ -384,7 +384,7 @@ const Checkout = () => {
                                     <div>
                                         <label className="block text-sm font-medium text-gray-700">PIN code</label>
                                         <input
-                                            type="text"
+                                            type="number"
                                             className="w-full p-2 border border-gray-300 text-sm rounded"
                                             value={billingPinCode}
                                             onChange={(e) => setBillingPinCode(e.target.value)}
