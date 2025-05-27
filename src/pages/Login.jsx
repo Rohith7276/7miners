@@ -17,8 +17,7 @@ const Login = () => {
   const handleSubmit = async (event) => {
     event.preventDefault()
     try {
-       await createUserWithEmailAndPassword(auth, email, password);
-       console.log(email)
+       await createUserWithEmailAndPassword(auth, email, password); 
       alert("Register successful")  
       localStorage.setItem("user", email)
       window.location.pathname = "/"
@@ -33,9 +32,9 @@ const Login = () => {
   const handleSubmit2 = async (event) => {
     event.preventDefault()
     try {
-      const res = await signInWithEmailAndPassword(auth, email, password); 
+      const res = await signInWithEmailAndPassword(auth, email, password);  
+      localStorage.setItem("user", res.user.email)
       alert("Login successful")
-      localStorage.setItem("user", res)
       window.location.pathname = "/"
     } catch (error) {
 
