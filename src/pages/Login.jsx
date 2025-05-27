@@ -18,8 +18,8 @@ const Login = () => {
     event.preventDefault()
     try {
        await createUserWithEmailAndPassword(auth, email, password);
-      alert("Register successful") 
-      alert(email)
+       console.log(email)
+      alert("Register successful")  
       localStorage.setItem("user", email)
       window.location.pathname = "/"
 
