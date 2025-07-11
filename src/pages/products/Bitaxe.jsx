@@ -132,8 +132,8 @@ const Bitaxe = () => {
                                     <img className='w-6   h-fit' src="https://imgs.search.brave.com/evybPWRZLyxZqDPmmjXT7nIRayQKJKENykRKzL86ml4/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly92aW1t/LmNvbS93cC1jb250/ZW50L3VwbG9hZHMv/MjAyMy8wOC90d2l0/dGVyLWNoYW5nZXMt/dG8teC5wbmc" alt="x" />
                                 </a>
 
-                                <a className='h-10 w-10 flex items-center justify-center' href="https://api.whatsapp.com/send?text=Check this out! https://7miners.in" target="_blank">
-                                    <img className='w-5 brightness-0  contrast-200 h-fit' src="https://images.seeklogo.com/logo-png/16/1/whatsapp-logo-png_seeklogo-168310.png" alt="whatsapp" />
+                                   <a className='h-10 w-10 flex items-center justify-center' href="https://api.whatsapp.com/send?text=Check this out! https://7miners.in" target="_blank">
+                                    <img className="w-6 hover:w-7 h-6 object-contain" src="https://images.seeklogo.com/logo-png/16/1/whatsapp-logo-png_seeklogo-168310.png" alt="whatsapp" />
                                 </a>
 
                                 <a className='h-10 w-10  flex items-center justify-center' href="https://www.linkedin.com/shareArticle?mini=true&url=https://7miners.in&title=Awesome%20Website" target="_blank">
