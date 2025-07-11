@@ -135,7 +135,7 @@ const Home = () => {
                                 </a>
 
                                 <a className='h-10 w-10 flex items-center justify-center' href="https://api.whatsapp.com/send?text=Check this out! https://7miners.in" target="_blank">
-                                    <img className="w-6 hover:w-7 h-6 object-contain" src="https://imgs.search.brave.com/1_lYKyfLRXThu0LN4vcKf46xi0zCuhTZlf7k-fWGT6Q/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9zdGF0/aWMtMDAuaWNvbmR1/Y2suY29tL2Fzc2V0/cy4wMC93aGF0c2Fw/cC1pY29uLTI1Nngy/NTYtbGtpZzlybzEu/cG5n" alt="whatsapp" />
+                                    <img className="w-6 hover:w-7 h-6 object-contain" src="https://images.seeklogo.com/logo-png/16/1/whatsapp-logo-png_seeklogo-168310.png" alt="whatsapp" />
                                 </a>
 
                                 <a className='h-10 w-10 flex items-center justify-center' href="https://www.linkedin.com/shareArticle?mini=true&url=https://7miners.in&title=Awesome%20Website" target="_blank">
