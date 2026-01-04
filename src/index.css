@@ -7,6 +7,10 @@
   transform: scale(1.06);
 }
 
+body {
+  user-select: none;
+}
+
 .imaage {
   transition: all ease-in-out 0.5s;
 }

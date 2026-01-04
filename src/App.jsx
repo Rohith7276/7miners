@@ -15,13 +15,15 @@ import { useEffect } from "react";
 import { useCartStore } from "./store/useCartStore"; 
 import Checkout from "./pages/Checkout";
 import Bitaxe from "./pages/products/Bitaxe"; 
+import Nerdoctaxe from "./pages/products/Nerdoctaxe"; 
+import Nerdqaxe from "./pages/products/Nerdqaxe"
 import  Collection  from "./pages/collections";
 import Login from "./pages/Login";
 
 const App = () => {
-  const { getCart } = useCartStore()
+  const {getData} = useCartStore()
   useEffect(() => {
-    getCart() 
+    getData()
   }, [])
 
 
@@ -38,8 +40,10 @@ const App = () => {
         <Route path="/cart" element={<Cart />} />
         <Route path="/shipping-policy" element={<ShippingPolicy />} />
         <Route path="/refund-policy" element={<RefundPolicy />} />
-        <Route path="/checkout" element={<Checkout />} />
+        <Route path={`/checkout`} element={<Checkout />} />
         <Route path="/products/bitaxe" element={<Bitaxe />} />
+        <Route path="/products/Nerdoctaxe" element={<Nerdoctaxe />} />
+        <Route path="/products/Nerdqaxe" element={<Nerdqaxe />} />
         <Route path="/catalog" element={<Collection />} />
         <Route path="/login" element={<Login />} />
       </Routes>

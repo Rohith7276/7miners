@@ -1,13 +1,31 @@
 import React from 'react'
 const { useState } = React;
-const products = [
-    {
-        id: 1,
+const products = [   
+     {
+        id: 2,
         name: 'Bitaxe Gamma 601',
         price: 25750.00,
-        image: 'https://7miners.in/cdn/shop/files/800-800-max-1.png?v=1742201216&width=713',
+        link: "/products/Bitaxe",
+        image: '/1.jpg',
         description: 'The Bitaxe Gamma 601 is a high-performance product designed for efficiency and reliability.', 
     }, 
+    {
+        id: 1,
+        name: 'NerdQaxe Bitcoin ASIC Miner',
+        price: 25750.00,
+        image: '/NERDQAXE/3.png',
+        link: "/products/Nerdqaxe",
+        description: ' ', 
+    }, 
+    {
+        id: 2,
+        name: 'NerdOctaxe 8 ASIC Chips',
+        price: 25750.00,
+        image: '/NERDOCTAXE/1.jpg',
+        link: "/products/Nerdoctaxe",
+        description: 'The NerdOctaxe 8 ASIC Chips offer cutting-edge performance with 8 advanced chips for optimal mining efficiency.', 
+    }, 
+
 ]
 const collections = () => {
     const [filter, setFilter] = useState('Availability');
@@ -19,50 +37,45 @@ const collections = () => {
             let x = [...products].sort((a, b) => a.name.localeCompare(b.name))
             setItems(x) 
         }
-        if(e == "title-descending"){
+        else if(e == "title-descending"){
             let x = [...products].sort((a, b) => b.name.localeCompare(a.name))
             setItems(x) 
         }
-        if(e == "price-ascending"){
+        else if(e == "price-ascending"){
             let x = [...products].sort((a, b) => a.price - b.price)
             setItems(x) 
         }
-        if(e == "price-descending"){
+        else if(e == "price-descending"){
             let x = [...products].sort((a, b) => b.price - a.price)
             setItems(x)
          
         }
-        if(e == "created-ascending"){
+        else if(e == "created-ascending"){
             let x = [...products].sort((a, b) => a.id - b.id)
             setItems(x)
          
         }
-        if(e == "created-descending"){
+        else if(e == "created-descending"){
             let x = [...products].sort((a, b) => b.id - a.id)
             setItems(x)
          
         }
-        if(e == "best-selling"){
+        else if(e == "best-selling"){
             let x = [...products].sort((a, b) => b.price - a.price)
             setItems(x)
          
         } 
-        if(e == "featured"){
+        else if(e == "featured"){
             let x = [...products].sort((a, b) => a.id - b.id)
             setItems(x)
          
         }
-        if(e == "availability"){
+        else if(e == "availability"){
             let x = [...products].sort((a, b) => a.id - b.id)
             setItems(x)
          
         }
-        if(e == "best-selling"){
-            let x = [...products].sort((a, b) => b.price - a.price)
-            setItems(x)
-         
-        }
-       
+       console.log(items)
 
     }
     return (
@@ -114,8 +127,8 @@ const collections = () => {
                     >
                         <option value="manual"> Featured </option>
                         <option value="best-selling"> Best selling </option>
-                        <option value="title-asceding" selected="selected"> Alphabetically, A-Z </option>
-                        <option value="title-descending"> Alphabetically, Z-A </option>
+                        <option value="title-asceding"  > Alphabetically, A-Z </option>
+                        <option value="title-descending"  > Alphabetically, Z-A </option>
                         <option value="price-ascending"> Price, low to high </option>
                         <option value="price-descending"> Price, high to low </option>
                         <option value="created-ascending"> Date, old to new </option>
@@ -126,11 +139,11 @@ const collections = () => {
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                 {items.map((product) => (
-                   <a key={product.id} href="/products/bitaxe">
+                   <a  href={product.link}>
 
                    <div className="flex flex-col border items-center">
                         <img
-                          src={`/${1}.jpg`}
+                          src={product.image}
                             alt={product.name}
                             className="mb-4"
                             width="300"

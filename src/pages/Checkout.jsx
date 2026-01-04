@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useCartStore } from '../store/useCartStore';
 import emailjs from "@emailjs/browser";
 
@@ -15,7 +15,7 @@ const Checkout = () => {
     const [pinCode, setPinCode] = useState('');
     const [saveInfo, setSaveInfo] = useState(false);
     const [billingSameAsShipping, setBillingSameAsShipping] = useState(true);
-    const { cartQuantity } = useCartStore()
+    const { cartQuantity, cart, item, modifyCart, getData } = useCartStore()
     const [billingCountry, setBillingCountry] = useState('India');
     const [billingFirstName, setBillingFirstName] = useState('');
     const [billingLastName, setBillingLastName] = useState('');
@@ -26,6 +26,32 @@ const Checkout = () => {
     const [billingPinCode, setBillingPinCode] = useState('');
     const [transactionId, setTransactionId] = useState('')
     const [handlePayment, setHandlePayment] = useState(false)
+
+
+    const [cartItems, setCartItems] = useState([])
+    const [total, setTotal] = useState(0)
+    useEffect(() => {
+        getData()
+
+    }, [])
+
+    useEffect(() => {
+        let x = []
+        let totalVal = 0
+        for (let i = 0; i < 3; i++) {
+            if (cart[i]) {
+                x.push({
+                    ...item[i], quantity: cart[i]
+                })
+                totalVal += item[i].price * cart[i]
+            }
+        }
+        console.log(cart)
+        setCartItems(x)
+        console.log(x)
+        setTotal(totalVal)
+    }, [cart, cartQuantity])
+
 
     const chekOut = async (details) => {
         const sendEmail = emailOffers ? "\nEmail Offers: Yes" : "\nEmail Offers: No"
@@ -149,14 +175,14 @@ const Checkout = () => {
             }
             setHandlePayment(true)
             chekOut(details)
- 
+
             alert("Order Placed Successfully")
         } catch (error) {
             alert("Some error has been occured")
-        } 
-        alert("Order Placed Successfully") 
+        }
+        alert("Order Placed Successfully")
         window.location.pathname = "/"
-    } 
+    }
 
     return (
         <div className="w-[99vw] mx-auto px-4 md:px-0 md:pl-8">
@@ -275,12 +301,12 @@ const Checkout = () => {
                     </div>
                     <h2 className="text-xl font-semibold mt-6 mb-4">Payment</h2>
                     <div>
- 
+
                         <label className="block text-sm font-medium text-gray-700">UPI ID : <span className='text-blue-500 cursor-pointer border-b border-transparent hover:border-black ' onClick={() => {
-  
-                                navigator.clipboard.writeText("7miners.in@axl");
-                                alert("UPI ID copied to clipboard!");
-                            } }>7miners.in@axl</span></label><p className="text-[1rem] text-gray-700 mb-4">Please pay <span className='font-bold'> ₹{Number(cartQuantity * 25750).toLocaleString('en-IN')}</span> to the provided UPI ID and enter the transaction id for completing the order.</p><input placeholder='Please Enter Transaction Id' className="w-full mb-6 p-2 border border-gray-300 text-sm rounded" type="text" onChange={(e) => setTransactionId(e.target.value)} /> 
+
+                            navigator.clipboard.writeText("7miners.in@axl");
+                            alert("UPI ID copied to clipboard!");
+                        }}>7miners.in@axl</span></label><p className="text-[1rem] text-gray-700 mb-4">Please pay <span className='font-bold'> ₹{Number(cartQuantity * 25750).toLocaleString('en-IN')}</span> to the provided UPI ID and enter the transaction id for completing the order.</p><input placeholder='Please Enter Transaction Id' className="w-full mb-6 p-2 border border-gray-300 text-sm rounded" type="text" onChange={(e) => setTransactionId(e.target.value)} />
                     </div>
                     <div className="p-4 border border-blue-500 rounded mb-4">
                         <p className="font-semibold mb-2">Payments only processed through UPI or Cash</p>
@@ -398,20 +424,25 @@ const Checkout = () => {
                     <button className="w-full bg-blue-600 text-white p-2 rounded" onClick={handleCompleteOrder}>Complete order</button>
                 </div>
                 <div className="bg-gray-200 pt-10 md:pt-28 w-full md:w-[40vw] p-6 rounded-lg shadow-md">
-                    <div className="flex items-center mb-4">
-                        <img
-                            src={`/${1}.jpg`}
-                            alt="Product image of Bitaxe Gamma 601"
-                            className="w-16 h-16 rounded-sm mr-4"
-                        />
-                        <div className="text-[0.4rem] bg-black relative text-white z-50 ml-[-1.4rem] mt-[-3.6rem] rounded-full h-[0.8rem] w-3 flex justify-center items-center">
-                            <span>{cartQuantity}</span>
-                        </div>
-                        <div className="ml-5">
-                            <p className="font-semibold">Bitaxe Gamma 601</p>
-                            <p className="text-gray-600">₹ {Number(cartQuantity * 25750).toLocaleString('en-IN')}</p>
-                        </div>
-                    </div>
+                    {cartItems.map((item) => {
+                        return (
+                            <div className="flex items-center mb-4">
+                                <img
+                                    src={item.image}
+                                    alt={item.name}
+                                    className="w-16 h-16 rounded-sm mr-4"
+                                />
+                                <div className="text-[0.6rem] bg-black relative text-white z-50 ml-[-1.4rem] mt-[-3.6rem] rounded-full h-[0.8rem] w-3 flex justify-center items-center">
+                                    <span>{item.quantity}</span>
+                                </div>
+                                <div className="ml-5">
+                                    <p className="font-semibold">{item.name}</p>
+                                    <p className="text-gray-600">₹ {Number(item.price).toLocaleString('en-IN')}</p>
+                                </div>
+                            </div>
+                        )
+                    })}
+
                     <div className="border-t border-gray-300 pt-4">
                         <div className="flex justify-between mb-2">
                             <p className="text-[0.7rem] text-gray-600">Subtotal</p>

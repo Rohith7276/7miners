@@ -12,10 +12,25 @@ const Navbar = () => {
   const { cartQuantity } = useCartStore()
   const items = [
     {
-      id: 1,
+      id: 0,
       name: "Bitaxe Gamma 601",
       price: 25750,
       image: `/1.jpg`,
+      link: "/products/bitaxe",
+    },
+    {
+      id: 1,
+      image: '/NERDQAXE/4.png',
+
+      name: "NerdQAxe",
+      price: 25750,
+      link: "/products/Nerdqaxe",
+    },
+    {
+      id: 2,
+      name: "NerdOctaxe ",
+      price: 25750,
+      image: `/NERDOCTAXE/1.jpg`,
       link: "/products/bitaxe",
     }
   ]

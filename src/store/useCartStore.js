@@ -1,20 +1,79 @@
-import { create } from "zustand"; 
+import { create } from "zustand";
 
 export const useCartStore = create((set, get) => ({
-  quantity: 1,
   cartQuantity: 0,
- 
+  item: [
+    {
+      id: 0,
+      name: "Bitaxe Gamma 601",
+      image: '/1.jpg',
+      price: 25750,
+    },
+    {
+      id: 1,
+      image: '/NERDQAXE/4.png',
+      name: "NerdQAxe",
+      price: 25750,
+    },
+    { 
+      id: 2, 
+      image: '/NERDOCTAXE/1.jpg',
 
-  getCart: ()=> set(()=> ({ cartQuantity: parseInt(localStorage.getItem("cartQuantity")) || 0 })),
-  addToCart: () => {
-    const quantity = get().quantity;
-    set((state) => ({ cartQuantity: quantity + state.cartQuantity, quantity: 1 }));
+      name: "NerdOctaxe",
+      price: 25750,
+    },
+  ],
+  //it is an array of object {item1, item2}
+  cart: {
+    0: 0,
+    1: 0,
+    2: 0
   },
-  addCartQuantity: (quantity) => set((state) => ({ cartQuantity: state.cartQuantity + quantity })),
-  removeCartQuantity: (quantity) => set((state) => ({ cartQuantity: state.cartQuantity - quantity })),
-  setCart: (quantity) => set(()=>({cartQuantity: quantity})),
+  addToCart: async (id, quantity) => {
 
-  addQuantity: (quantity) => set((state) => ({ quantity: state.quantity + quantity })),
-  removeQuantity: (quantity) => set((state) => ({ quantity: state.quantity - quantity })),
-  setQuantity: (quantity) => set({ quantity: quantity }),
+    const { cart, cartQuantity } = get()
+    let modifiedCart = cart;
+    modifiedCart[id] += quantity
+
+    set({ cart: modifiedCart })
+    let sum = cartQuantity + quantity
+    set({ cartQuantity: sum })
+
+    localStorage.setItem("data", JSON.stringify({ sum, modifiedCart }))
+  },
+  modifyCart: async (id, quantity) => {
+
+    const { cart, cartQuantity } = get()
+    let modifiedCart = cart;
+    modifiedCart[id] = quantity
+
+    set({ cart: modifiedCart })
+    let sum = 0
+    for (let i = 0; i < 3; i++) {
+      sum += modifiedCart[i]
+    }
+    console.log(sum);
+    set({ cartQuantity: sum })
+
+    localStorage.setItem("data", JSON.stringify({ cartQuantity, modifiedCart }))
+  },
+  removeToCart: async (id, quantity) => {
+
+    const { cart, cartQuantity } = get()
+    let modifiedCart = cart;
+    modifiedCart[id] -= quantity
+
+    set({ cart: modifiedCart })
+    let sum = cartQuantity - quantity
+    set({ cartQuantity: sum })
+
+    localStorage.setItem("data", JSON.stringify({ sum, modifiedCart }))
+  },
+  getData: async () => {
+    let data = JSON.parse(localStorage.getItem("data"))
+    set({ cart: data.modifiedCart })
+    set({ cartQuantity: data.sum })
+  
+  },
+ 
 }));
