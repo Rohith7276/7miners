@@ -37,19 +37,18 @@ const Checkout = () => {
 
     useEffect(() => {
         let x = []
-        let totalVal = 0
+        let totalval = 0
         for (let i = 0; i < 3; i++) {
             if (cart[i]) {
                 x.push({
                     ...item[i], quantity: cart[i]
                 })
-                totalVal += item[i].price * cart[i]
+                totalval += item[i].price * cart[i]
             }
         }
         console.log(cart)
-        setCartItems(x)
-        console.log(x)
-        setTotal(totalVal)
+        setCartItems(x) 
+        setTotal(totalval)
     }, [cart, cartQuantity])
 
 
@@ -72,7 +71,7 @@ const Checkout = () => {
         Product Details:
             Product Name: Bitaxe Gamma 601
             Quantity: ${cartQuantity}
-            Total Amount: ₹${Number(cartQuantity * 25750).toLocaleString('en-IN')}
+            Total Amount: ₹${Number(total).toLocaleString('en-IN')}
             Transaction ID: ${transactionId}
 
         Shipping Address:
@@ -306,7 +305,7 @@ const Checkout = () => {
 
                             navigator.clipboard.writeText("7miners.in@axl");
                             alert("UPI ID copied to clipboard!");
-                        }}>7miners.in@axl</span></label><p className="text-[1rem] text-gray-700 mb-4">Please pay <span className='font-bold'> ₹{Number(cartQuantity * 25750).toLocaleString('en-IN')}</span> to the provided UPI ID and enter the transaction id for completing the order.</p><input placeholder='Please Enter Transaction Id' className="w-full mb-6 p-2 border border-gray-300 text-sm rounded" type="text" onChange={(e) => setTransactionId(e.target.value)} />
+                        }}>7miners.in@axl</span></label><p className="text-[1rem] text-gray-700 mb-4">Please pay <span className='font-bold'> ₹{Number(total).toLocaleString('en-IN')}</span> to the provided UPI ID and enter the transaction id for completing the order.</p><input placeholder='Please Enter Transaction Id' className="w-full mb-6 p-2 border border-gray-300 text-sm rounded" type="text" onChange={(e) => setTransactionId(e.target.value)} />
                     </div>
                     <div className="p-4 border border-blue-500 rounded mb-4">
                         <p className="font-semibold mb-2">Payments only processed through UPI or Cash</p>
@@ -446,7 +445,7 @@ const Checkout = () => {
                     <div className="border-t border-gray-300 pt-4">
                         <div className="flex justify-between mb-2">
                             <p className="text-[0.7rem] text-gray-600">Subtotal</p>
-                            <p className="text-[0.7rem] text-end">  ₹ {Number(cartQuantity * 25750).toLocaleString('en-IN')}</p>
+                            <p className="text-[0.7rem] text-end">  ₹ {Number(total).toLocaleString('en-IN')}</p>
                         </div>
                         <div className="flex justify-between w-full mb-2">
                             <p className="text-[0.7rem] text-gray-600">Shipping</p>
@@ -454,7 +453,7 @@ const Checkout = () => {
                         </div>
                         <div className="flex justify-between font-semibold text-lg">
                             <p className="text-[0.9rem]">Total</p>
-                            <p className="text-[0.9rem]">INR ₹ {Number(cartQuantity * 25750).toLocaleString('en-IN')}</p>
+                            <p className="text-[0.9rem]">INR ₹ {Number(total).toLocaleString('en-IN')}</p>
                         </div>
                         <p className="text-gray-600 text-[0.7rem]">Including taxes</p>
                     </div>
