@@ -43,13 +43,13 @@ export const SliderComponent = () => {
               <img src={`/${1}.jpg`} className='imaage w-[100%]   m-auto' alt="" /> 
             </div> 
             <div className='m-auto flex justify-center  h-full items-center'>
-              <img src={`/${2}.jpg`} className='imaage w-[80%]   m-auto' alt="" /> 
+              <img src={`/${2}.jpg`} className='imaage w-[70%]   m-auto' alt="" /> 
             </div> 
             <div className='m-auto flex p-12 justify-center  h-full items-center'>
-              <img src={`/${3}.jpg`} className='imaage w-[80%]   m-auto' alt="" /> 
+              <img src={`/${3}.jpg`} className='imaage w-[70%]   m-auto' alt="" /> 
             </div> 
             <div className='m-auto flex justify-center  h-full items-center'>
-              <img src={`/${4}.jpg`} className='imaage w-[80%]   m-auto' alt="" /> 
+              <img src={`/${4}.jpg`} className='imaage w-[70%]   m-auto' alt="" /> 
             </div> 
         </Slide>
       </div>

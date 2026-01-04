@@ -7,20 +7,20 @@ export const useCartStore = create((set, get) => ({
       id: 0,
       name: "Bitaxe Gamma 601",
       image: '/1.jpg',
-      price: 25750,
+      price: 28000,
     },
     {
       id: 1,
       image: '/NERDQAXE/4.png',
       name: "NerdQAxe",
-      price: 25750,
+      price: 89000,
     },
     { 
       id: 2, 
       image: '/NERDOCTAXE/1.jpg',
 
       name: "NerdOctaxe",
-      price: 25750,
+      price: 129000,
     },
   ],
   //it is an array of object {item1, item2}

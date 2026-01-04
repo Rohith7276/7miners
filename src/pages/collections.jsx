@@ -1,85 +1,85 @@
 import React from 'react'
 const { useState } = React;
-const products = [   
-     {
+const products = [
+    {
         id: 2,
         name: 'Bitaxe Gamma 601',
-        price: 25750.00,
+        price: 28000,
         link: "/products/Bitaxe",
         image: '/1.jpg',
-        description: 'The Bitaxe Gamma 601 is a high-performance product designed for efficiency and reliability.', 
-    }, 
+        description: 'The Bitaxe Gamma 601 is a high-performance product designed for efficiency and reliability.',
+    },
     {
         id: 1,
         name: 'NerdQaxe Bitcoin ASIC Miner',
-        price: 25750.00,
+        price: 89000,
         image: '/NERDQAXE/3.png',
         link: "/products/Nerdqaxe",
-        description: ' ', 
-    }, 
+        description: ' ',
+    },
     {
         id: 2,
         name: 'NerdOctaxe 8 ASIC Chips',
-        price: 25750.00,
+        price: 129000,
         image: '/NERDOCTAXE/1.jpg',
         link: "/products/Nerdoctaxe",
-        description: 'The NerdOctaxe 8 ASIC Chips offer cutting-edge performance with 8 advanced chips for optimal mining efficiency.', 
-    }, 
+        description: 'The NerdOctaxe 8 ASIC Chips offer cutting-edge performance with 8 advanced chips for optimal mining efficiency.',
+    },
 
 ]
 const collections = () => {
     const [filter, setFilter] = useState('Availability');
     const [items, setItems] = useState(products)
     const [sort, setSort] = useState('Alphabetically, A-Z');
-    const handleSort = (e)=>{
-        setSort(e) 
-        if(e == "title-asceding"){
+    const handleSort = (e) => {
+        setSort(e)
+        if (e == "title-asceding") {
             let x = [...products].sort((a, b) => a.name.localeCompare(b.name))
-            setItems(x) 
+            setItems(x)
         }
-        else if(e == "title-descending"){
+        else if (e == "title-descending") {
             let x = [...products].sort((a, b) => b.name.localeCompare(a.name))
-            setItems(x) 
+            setItems(x)
         }
-        else if(e == "price-ascending"){
+        else if (e == "price-ascending") {
             let x = [...products].sort((a, b) => a.price - b.price)
-            setItems(x) 
+            setItems(x)
         }
-        else if(e == "price-descending"){
+        else if (e == "price-descending") {
             let x = [...products].sort((a, b) => b.price - a.price)
             setItems(x)
-         
+
         }
-        else if(e == "created-ascending"){
+        else if (e == "created-ascending") {
             let x = [...products].sort((a, b) => a.id - b.id)
             setItems(x)
-         
+
         }
-        else if(e == "created-descending"){
+        else if (e == "created-descending") {
             let x = [...products].sort((a, b) => b.id - a.id)
             setItems(x)
-         
+
         }
-        else if(e == "best-selling"){
+        else if (e == "best-selling") {
             let x = [...products].sort((a, b) => b.price - a.price)
             setItems(x)
-         
-        } 
-        else if(e == "featured"){
+
+        }
+        else if (e == "featured") {
             let x = [...products].sort((a, b) => a.id - b.id)
             setItems(x)
-         
+
         }
-        else if(e == "availability"){
+        else if (e == "availability") {
             let x = [...products].sort((a, b) => a.id - b.id)
             setItems(x)
-         
+
         }
-       console.log(items)
+        console.log(items)
 
     }
     return (
-     <div className=" mt-24 text-[0.88rem] text-gray-700 lg:w-[70rem] min-h-[80vh]  py-[1rem]   m-auto 
+        <div className=" mt-24 text-[0.88rem] text-gray-700 lg:w-[70rem] min-h-[80vh]  py-[1rem]   m-auto 
        ">
             <h1 className="text-4xl font-bold ml-2 lg:ml-0 mb-8">Products</h1>
             <div className="flex flex-col md:flex-row justify-between items-center mb-4 space-y-4 md:space-y-0">
@@ -139,20 +139,20 @@ const collections = () => {
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                 {items.map((product) => (
-                   <a  href={product.link}>
+                    <a href={product.link}>
 
-                   <div className="flex flex-col border items-center">
-                        <img
-                          src={product.image}
-                            alt={product.name}
-                            className="mb-4"
-                            width="300"
-                            height="400"
+                        <div className="flex flex-col border items-center">
+                            <img
+                                src={product.image}
+                                alt={product.name}
+                                className="mb-4"
+                                width="300"
+                                height="400"
                             />
-                        <h2 className="text-lg font-semibold text-center">{product.name}</h2>
-                        <p className="text-gray-600 text-center">Rs. {Number(product.price).toLocaleString('en-IN')}</p>
-                    </div>
-                            </a>
+                            <h2 className="text-lg font-semibold text-center">{product.name}</h2>
+                            <p className="text-gray-600 text-center">Rs. {Number(product.price).toLocaleString('en-IN')}</p>
+                        </div>
+                    </a>
                 ))}
             </div>
         </div>

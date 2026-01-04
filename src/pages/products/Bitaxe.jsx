@@ -10,7 +10,7 @@ const Bitaxe = () => {
     const itemDiv = useRef(null);
 
     const [quantity, setQuantity] = useState(1)
-    const { cart,  cartQuantity, addToCart } = useCartStore() 
+    const { cart,item, cartQuantity, addToCart } = useCartStore()
 
     const images = [
         "https://7miners.in/cdn/shop/files/800-800-max-1.png?v=1742201216&width=713",
@@ -44,6 +44,7 @@ const Bitaxe = () => {
     const addCartAnimation = contextSafe(() => {
         gsap.to(".cartAppear", {
             opacity: 1,
+            display: "block",
             duration: 0.5,
             y: 40
         })
@@ -62,7 +63,7 @@ const Bitaxe = () => {
         exitAnim()
     }
 
-   
+
 
     useEffect(() => {
         animation()
@@ -71,7 +72,7 @@ const Bitaxe = () => {
 
 
     return (<div className=''>
-        <div className='cartAppear fixed hid den justify-between opacity-0 top-[1.5rem] right-4 md:right-24 shadow-sm w-[90vw] md:w-[25vw] border   items-center  bg-white z-50 p-5'>
+        <div className='cartAppear fixed hidden  justify-between opacity-0 top-[1.5rem] right-4 md:right-24 shadow-sm w-[90vw] md:w-[25vw] border   items-center  bg-white z-50 p-5'>
             <button onClick={() => exitCartAnimation()} className='cursor-pointer flex justify-end w-full'><X className='h-6' /></button>
             <h4 className='text-[0.7rem] text-gray-600 mb-2 flex'><Check className='h-4' />Item added to your cart</h4>
             <div className='flex gap-4'>
@@ -84,7 +85,7 @@ const Bitaxe = () => {
                 <a className='border-b border-gray-600 text-gray-500 text-[0.7rem] mt-3' href="/">Continue shopping</a>
             </div>
         </div>
-        <div className='flex my-8 justify-between md:w-[70rem] pl-5 w-[99vw] flex-col items-center lg:flex-row m-auto items-top  '>
+        <div className='flex my-8 mt-20 justify-between md:w-[70%] pl-5 w-[99vw] flex-col items-center lg:flex-row m-auto items-top  '>
 
             <div className='postcard overflow-hidden mb-6 ml-11 px-5 md:px-0 md:ml-0 border w-full  mt-4 md:w-[35vw]  appear opacity-0 shadow-sm border-gray-100'>
 
@@ -95,7 +96,7 @@ const Bitaxe = () => {
                 <p className='animate opacity-0 text-3xl'>Bitaxe Gamma 601</p>
                 <div className='flex flex-col gap-1 my-3'>
                     <div className='flex flex-col gap-1 my-3'>
-                        <p className='animate opacity-0 mt-1 text-2xl'> Rs. ₹25,750 </p>
+                        <p className='animate opacity-0 mt-1 text-2xl'>  Rs. {item[0].price.toLocaleString('en-IN')} </p>
                         <p className='animate opacity-0 text-sm text-gray-500'>Taxes included. <a href='/shipping-policy' className='border-b hover:border-b-2 border-black'>Shipping</a> calculated at checkout.</p>
                     </div>    </div>
                 <div className='flex flex-col  gap-1'>
@@ -106,39 +107,27 @@ const Bitaxe = () => {
                         <button className='  pr-2 py-1' onClick={() => setQuantity(quantity + 1)}><Plus className='h-[0.7rem]' /></button>
                     </div>
                     <div className='flex flex-col items-center mt-4'>
-                        <button onClick={()=>{addToCart(0, quantity); addCartAnimation() }} className='bg-white flex items-center justify-center animate opacity-0 w-full border h-[2.5rem] hover:border-2 text-black rounded-sm px-3 border-black hover:border-opacity-100 mt-2 text-[0.7rem]' style={{ boxSizing: 'border-box' }}>Add to Cart</button>
-                        <button   className='w-full'> <button className='bg-black animate opacity-0 w-full h-[2.5rem] border border-white hover:border-black text-white rounded-sm px-3 mt-2 text-[0.7rem]' onClick={() => {
-                           
+                        <button onClick={() => { addToCart(0, quantity); addCartAnimation() }} className='bg-white flex items-center justify-center animate opacity-0 w-full border h-[2.5rem] hover:border-2 text-black rounded-sm px-3 border-black hover:border-opacity-100 mt-2 text-[0.7rem]' style={{ boxSizing: 'border-box' }}>Add to Cart</button>
+                        <button className='w-full'> <button className='bg-black animate opacity-0 w-full h-[2.5rem] border border-white hover:border-black text-white rounded-sm px-3 mt-2 text-[0.7rem]' onClick={() => {
+
                             addToCart(0, quantity)
                             window.location.href = "/checkout"
-                          
+
                         }}>Buy it now</button></button>
                     </div>
                     <div className='flex flex-col  md:flex-row justify-between h-fit items-center animate opacity-0 mt-4'>
                         <div className='flex text-3xl w-fit mb-20 lg:mb-0 items-center gap-3'>
-
-                            <a className='h-10 w-10 flex items-center justify-center' href="https://www.facebook.com/sharer/sharer.php?u=https://7miners.in" target="_blank">
-                                <Facebook className=' ' />
+ 
+                            <a className='h-10   flex items-center justify-center' href="https://wa.me/917760659382" target="_blank">
+                                <img className="w-6 hover:w-7 h-6 object-contain" src="https://images.seeklogo.com/logo-png/16/1/whatsapp-logo-png_seeklogo-168310.png" alt="whatsapp" /> <span className='ml-2 font-semibold text-[1rem]'>Reach us out!</span>
                             </a>
-
-                            <a className='h-10 w-10 flex items-center justify-center' href="https://twitter.com/intent/tweet?url=https://7miners.in&text=Check this out!" target="_blank">
-
-                                <img className='w-6   h-fit' src="https://imgs.search.brave.com/evybPWRZLyxZqDPmmjXT7nIRayQKJKENykRKzL86ml4/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly92aW1t/LmNvbS93cC1jb250/ZW50L3VwbG9hZHMv/MjAyMy8wOC90d2l0/dGVyLWNoYW5nZXMt/dG8teC5wbmc" alt="x" />
-                            </a>
-
-                            <a className='h-10 w-10 flex items-center justify-center' href="https://api.whatsapp.com/send?text=Check this out! https://7miners.in" target="_blank">
-                                <img className="w-6 hover:w-7 h-6 object-contain" src="https://images.seeklogo.com/logo-png/16/1/whatsapp-logo-png_seeklogo-168310.png" alt="whatsapp" />
-                            </a>
-
-                            <a className='h-10 w-10  flex items-center justify-center' href="https://www.linkedin.com/shareArticle?mini=true&url=https://7miners.in&title=Awesome%20Website" target="_blank">
-                                <Linkedin className=' ' />
-                            </a>
+ 
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <section className='p-8 mx-10 lg:mx-52 mb-11  lg:mt-[11vh] bg-gray-50'>
+        <section className='p-8 mx-10 lg:mx-[13%] mb-11  lg:mt-[11vh] bg-gray-50'>
             <h2 className='text-xl font-bold mb-4'>THE BITAXE</h2>
             <p className='mb-4'>The first open source hardware miner.</p>
             <p className='mb-4'>The Bitaxe project is a single ASIC miner board fully open-source, who showcases reverse engineering of Bitmain’s mining chips. It currently has various versions, all primarily centered around a single ASIC mining chip.</p>

@@ -9,8 +9,8 @@ const HomePage = () => {
 
 
   return (
-    <section className=' mt-[5rem] '> 
-      <Home/>
+    <section className=' mt-[7rem] '> 
+       
     <About/>
 
     </section>

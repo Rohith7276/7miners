@@ -26,7 +26,7 @@ const divStyle = {
 
 const Nerdoctaxe = () => {
     const [quantity, setQuantity] = useState(1)
-    const { cart, cartQuantity, addToCart } = useCartStore()
+    const { cart,item, cartQuantity, addToCart } = useCartStore()
     const zoomInProperties = {
         duration: 5000,
         transitionDuration: 500, // Transition duration between slides in milliseconds
@@ -72,6 +72,7 @@ const Nerdoctaxe = () => {
     const addCartAnimation = contextSafe(() => {
 
         gsap.to(".cartAppear", {
+            display: "block",
             opacity: 1,
             duration: 0.5,
             y: 40
@@ -107,8 +108,8 @@ const Nerdoctaxe = () => {
 
 
     return (<div className=''>
-        <div className='cartAppear fixed   justify-between opacity-0 top-[1.5rem] right-4 md:right-24 shadow-sm w-[90vw] md:w-[25vw] border   items-center  bg-white z-50 p-5'>
-            <button onClick={() => exitCartAnimation()} className='cursor-pointer flex justify-end w-full'><X className='h-6' /></button>
+         <div className='cartAppear fixed hidden  justify-between opacity-0 top-[1.5rem] right-4 md:right-24 shadow-sm w-[90vw] md:w-[25vw] border   items-center  bg-white z-50 p-5'>
+             <button onClick={() => exitCartAnimation()} className='cursor-pointer flex justify-end w-full'><X className='h-6' /></button>
             <h4 className='text-[0.7rem] text-gray-600 mb-2 flex'><Check className='h-4' />Item added to your cart</h4>
             <div className='flex gap-4'>
                 <img className='w-[4rem] border rounded-sm' src={`/${1}.jpg`} alt="7miners" />
@@ -120,7 +121,7 @@ const Nerdoctaxe = () => {
                 <a className='border-b border-gray-600 text-gray-500 text-[0.7rem] mt-3' href="/">Continue shopping</a>
             </div>
         </div>
-        <div className='flex my-8 justify-between md:w-[70rem] pl-5 w-[99vw] flex-col items-center lg:flex-row m-auto items-top  '>
+             <div className='flex my-8 mt-20 justify-between md:w-[70%] pl-5 w-[99vw] flex-col items-center lg:flex-row m-auto items-top  '>
 
             <div className='postcard overflow-hidden mb-6 ml-11 px-5 md:px-0 md:ml-0 border w-full  mt-4 md:w-[35vw]  appear opacity-0 shadow-sm border-gray-100'>
 
@@ -141,34 +142,34 @@ const Nerdoctaxe = () => {
 
                         </div>
                         <div className='m-auto flex p-12 justify-center  h-full items-center'>
-                            <img src={`/NERDOCTAXE/3.png`} className='imaage w-[80%]   m-auto' alt="" />
+                            <img src={`/NERDOCTAXE/3.png`} className='imaage w-[70%]   m-auto' alt="" />
                         </div>
                         <div className='m-auto flex justify-center  h-full items-center'>
-                            <img src={`/NERDOCTAXE/4.jpg`} className='imaage w-[80%]   m-auto' alt="" />
+                            <img src={`/NERDOCTAXE/4.jpg`} className='imaage w-[70%]   m-auto' alt="" />
                         </div>
                         <div className='m-auto flex justify-center  h-full items-center'>
-                            <img src={`/NERDOCTAXE/5.png`} className='imaage w-[80%]   m-auto' alt="" />
+                            <img src={`/NERDOCTAXE/5.png`} className='imaage w-[70%]   m-auto' alt="" />
                         </div>
                         <div className='m-auto flex justify-center  h-full items-center'>
-                            <img src={`/NERDOCTAXE/6.png`} className='imaage w-[80%]   m-auto' alt="" />
+                            <img src={`/NERDOCTAXE/6.png`} className='imaage w-[70%]   m-auto' alt="" />
                         </div>
                         <div className='m-auto flex justify-center  h-full items-center'>
-                            <img src={`/NERDOCTAXE/7.png`} className='imaage w-[80%]   m-auto' alt="" />
+                            <img src={`/NERDOCTAXE/7.png`} className='imaage w-[70%]   m-auto' alt="" />
                         </div>
                         <div className='m-auto flex justify-center  h-full items-center'>
-                            <img src={`/NERDOCTAXE/8.png`} className='imaage w-[80%]   m-auto' alt="" />
+                            <img src={`/NERDOCTAXE/8.png`} className='imaage w-[70%]   m-auto' alt="" />
                         </div>
                         <div className='m-auto flex justify-center  h-full items-center'>
-                            <img src={`/NERDOCTAXE/9.png`} className='imaage w-[80%]   m-auto' alt="" />
+                            <img src={`/NERDOCTAXE/9.png`} className='imaage w-[70%]   m-auto' alt="" />
                         </div>
                         <div className='m-auto flex justify-center  h-full items-center'>
-                            <img src={`/NERDOCTAXE/10.png`} className='imaage w-[80%]   m-auto' alt="" />
+                            <img src={`/NERDOCTAXE/10.png`} className='imaage w-[70%]   m-auto' alt="" />
                         </div>
                         <div className='m-auto flex justify-center  h-full items-center'>
-                            <img src={`/NERDOCTAXE/11.png`} className='imaage w-[80%]   m-auto' alt="" />
+                            <img src={`/NERDOCTAXE/11.png`} className='imaage w-[70%]   m-auto' alt="" />
                         </div>
                         <div className='m-auto flex justify-center  h-full items-center'>
-                            <img src={`/NERDOCTAXE/12.png`} className='imaage w-[80%]   m-auto' alt="" />
+                            <img src={`/NERDOCTAXE/12.png`} className='imaage w-[70%]   m-auto' alt="" />
                         </div>
                     </Slide>
                 </div>
@@ -178,7 +179,8 @@ const Nerdoctaxe = () => {
                 <p className='animate opacity-0 text-3xl'>The NerdOctaxe 8 ASIC Chips</p>
                 <div className='flex flex-col gap-1 my-3'>
                     <div className='flex flex-col gap-1 my-3'>
-                        <p className='animate opacity-0 mt-1 text-2xl'> Rs. ₹25,750 </p>
+                                               <p className='animate opacity-0 mt-1 text-2xl'>  Rs. {item[2].price.toLocaleString('en-IN')} </p>
+
                         <p className='animate opacity-0 text-sm text-gray-500'>Taxes included. <a href='/shipping-policy' className='border-b hover:border-b-2 border-black'>Shipping</a> calculated at checkout.</p>
                     </div>    </div>
                 <div className='flex flex-col  gap-1'>
@@ -198,24 +200,12 @@ const Nerdoctaxe = () => {
                         }}>Buy it now</button></button>
                     </div>
                     <div className='flex flex-col  md:flex-row justify-between h-fit items-center animate opacity-0 mt-4'>
-                        <div className='flex text-3xl w-fit mb-20 lg:mb-0 items-center gap-3'>
-
-                            <a className='h-10 w-10 flex items-center justify-center' href="https://www.facebook.com/sharer/sharer.php?u=https://7miners.in" target="_blank">
-                                <Facebook className=' ' />
+                            <div className='flex text-3xl w-fit mb-20 lg:mb-0 items-center gap-3'>
+ 
+                            <a className='h-10   flex items-center justify-center' href="https://wa.me/917760659382" target="_blank">
+                                <img className="w-6 hover:w-7 h-6 object-contain" src="https://images.seeklogo.com/logo-png/16/1/whatsapp-logo-png_seeklogo-168310.png" alt="whatsapp" /> <span className='ml-2 font-semibold text-[1rem]'>Reach us out!</span>
                             </a>
-
-                            <a className='h-10 w-10 flex items-center justify-center' href="https://twitter.com/intent/tweet?url=https://7miners.in&text=Check this out!" target="_blank">
-
-                                <img className='w-6   h-fit' src="https://imgs.search.brave.com/evybPWRZLyxZqDPmmjXT7nIRayQKJKENykRKzL86ml4/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly92aW1t/LmNvbS93cC1jb250/ZW50L3VwbG9hZHMv/MjAyMy8wOC90d2l0/dGVyLWNoYW5nZXMt/dG8teC5wbmc" alt="x" />
-                            </a>
-
-                            <a className='h-10 w-10 flex items-center justify-center' href="https://api.whatsapp.com/send?text=Check this out! https://7miners.in" target="_blank">
-                                <img className="w-6 hover:w-7 h-6 object-contain" src="https://images.seeklogo.com/logo-png/16/1/whatsapp-logo-png_seeklogo-168310.png" alt="whatsapp" />
-                            </a>
-
-                            <a className='h-10 w-10  flex items-center justify-center' href="https://www.linkedin.com/shareArticle?mini=true&url=https://7miners.in&title=Awesome%20Website" target="_blank">
-                                <Linkedin className=' ' />
-                            </a>
+ 
                         </div>
                     </div>
                 </div>

@@ -456,7 +456,7 @@ const Checkout = () => {
                             <p className="text-[0.9rem]">Total</p>
                             <p className="text-[0.9rem]">INR ₹ {Number(cartQuantity * 25750).toLocaleString('en-IN')}</p>
                         </div>
-                        <p className="text-gray-600 text-[0.7rem]">Including  Rs.{Number(cartQuantity * 3862.5).toLocaleString('en-IN')} in taxes</p>
+                        <p className="text-gray-600 text-[0.7rem]">Including taxes</p>
                     </div>
                 </div>
             </div>
