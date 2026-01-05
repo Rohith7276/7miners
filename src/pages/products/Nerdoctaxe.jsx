@@ -121,7 +121,7 @@ const Nerdoctaxe = () => {
                 <a className='border-b border-gray-600 text-gray-500 text-[0.7rem] mt-3' href="/">Continue shopping</a>
             </div>
         </div>
-             <div className='flex my-8 mt-20 justify-between md:w-[70%] pl-5 w-[99vw] flex-col items-center lg:flex-row m-auto items-top  '>
+             <div className='flex my-8 mt-20 justify-between md:w-[70rem] pl-5 w-[99vw] flex-col items-center lg:flex-row m-auto items-top  '>
 
             <div className='postcard overflow-hidden mb-6 ml-11 px-5 md:px-0 md:ml-0 border w-full  mt-4 md:w-[35vw]  appear opacity-0 shadow-sm border-gray-100'>
 
@@ -211,7 +211,8 @@ const Nerdoctaxe = () => {
                 </div>
             </div>
         </div>
-        <section className='p-8 mx-10 lg:mx-52 mb-11  lg:mt-[11vh] bg-gray-50'>
+              <section className='p-8 mx-10  lg:w-[70rem] lg:mx-auto mb-11  lg:mt-[11vh] bg-gray-50'>
+
             <h2 className='text-xl font-bold mb-4'>THE The NerdOctaxe 8 ASIC Chips</h2>
             <p className='mb-4'>Pure Open-Source Power</p>
             <p className='mb-4'>The NerdOctaxe is built on the foundation of the Bitaxe project but expands the architecture significantly with eight BM1370 ASIC chips, delivering up to 12 TH/s of hashrate in its Revision 3.1. Thanks to the upgraded 6-phase VRM, the new TPS53667 power controller, and an improved PCB layout, the NerdOctaxe achieves an efficiency of around 15.8 J/TH, with a typical power consumption of 160 W. This makes the Rev 3.1 one of the most powerful and thermally stable open-source miners available today.

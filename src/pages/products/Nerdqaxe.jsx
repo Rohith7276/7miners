@@ -1,6 +1,6 @@
 import React from 'react'
 import { SliderComponent } from '../../components/SliderComponent'
-import { useRef,useState, useEffect } from 'react'
+import { useRef, useState, useEffect } from 'react'
 import { Plus, Minus, Share, MoveRight, Check, Cross, X, Linkedin, Facebook, File } from 'lucide-react'
 import { useCartStore } from '../../store/useCartStore'
 import { gsap } from "gsap"
@@ -45,7 +45,7 @@ const Nerdoctaxe = () => {
         ),
     };
     const itemDiv = useRef(null);
- 
+
 
 
 
@@ -121,7 +121,7 @@ const Nerdoctaxe = () => {
                 <a className='border-b border-gray-600 text-gray-500 text-[0.7rem] mt-3' href="/">Continue shopping</a>
             </div>
         </div>
-       <div className='flex my-8 mt-20 justify-between md:w-[70%] pl-5 w-[99vw] flex-col items-center lg:flex-row m-auto items-top  '>
+        <div className='flex my-8 mt-20 justify-between md:w-[70rem] pl-5 w-[99vw] flex-col items-center lg:flex-row m-auto items-top  '>
             <div className='postcard overflow-hidden mb-6 ml-11 px-5 md:px-0 md:ml-0 border w-full  mt-4 md:w-[35vw]  appear opacity-0 shadow-sm border-gray-100'>
 
                 <div className={`hover:${"hovering"} slide-container  h-fit   `}>
@@ -132,7 +132,7 @@ const Nerdoctaxe = () => {
                         <div className='m-auto flex justify-center  h-full items-center p-5'>
                             <img src={`/NERDQAXE/2.png`} className='imaage w-[100%]   m-auto' alt="" />
                         </div>
-                     
+
                         <div className='m-auto flex p-12 justify-center  h-full items-center'>
                             <img src={`/NERDQAXE/3.png`} className='imaage w-[70%]   m-auto' alt="" />
                         </div>
@@ -150,12 +150,12 @@ const Nerdoctaxe = () => {
                         </div>
                         <div className='m-auto flex justify-center  h-full items-center p-5 cursor-pointer' onClick={() => window.open('/NERDQAXE/8.pdf', '_blank')}>
                             <div className='imaage  m-auto flex  gap-3 p-5 items-center justify-center flex-col bg-gray-50 rounded-md '>
-                             <div>
+                                <div>
 
 
-                                <File className=' text-2xl' width={200} height={200}/>
-                             </div>
-                                 
+                                    <File className=' text-2xl' width={200} height={200} />
+                                </div>
+
                                 <p className='text-gray-700 font-semibold block text-2xl'>Click to view PDF</p>
                             </div>
                         </div>
@@ -167,7 +167,7 @@ const Nerdoctaxe = () => {
                 <p className='animate opacity-0 text-3xl'>The NerdQaxe Bitcoin ASIC Miner</p>
                 <div className='flex flex-col gap-1 my-3'>
                     <div className='flex flex-col gap-1 my-3'>
-                                               <p className='animate opacity-0 mt-1 text-2xl'>  Rs. {item[1].price.toLocaleString('en-IN')} </p>
+                        <p className='animate opacity-0 mt-1 text-2xl'>  Rs. {item[1].price.toLocaleString('en-IN')} </p>
 
                         <p className='animate opacity-0 text-sm text-gray-500'>Taxes included. <a href='/shipping-policy' className='border-b hover:border-b-2 border-black'>Shipping</a> calculated at checkout.</p>
                     </div>    </div>
@@ -188,18 +188,19 @@ const Nerdoctaxe = () => {
                         }}>Buy it now</button></button>
                     </div>
                     <div className='flex flex-col  md:flex-row justify-between h-fit items-center animate opacity-0 mt-4'>
-                            <div className='flex text-3xl w-fit mb-20 lg:mb-0 items-center gap-3'>
- 
+                        <div className='flex text-3xl w-fit mb-20 lg:mb-0 items-center gap-3'>
+
                             <a className='h-10   flex items-center justify-center' href="https://wa.me/917760659382" target="_blank">
                                 <img className="w-6 hover:w-7 h-6 object-contain" src="https://images.seeklogo.com/logo-png/16/1/whatsapp-logo-png_seeklogo-168310.png" alt="whatsapp" /> <span className='ml-2 font-semibold text-[1rem]'>Reach us out!</span>
                             </a>
- 
+
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <section className='p-8 mx-10 lg:mx-52 mb-11  lg:mt-[11vh] bg-gray-50'>
+        <section className='p-8 mx-10  lg:w-[70rem] lg:mx-auto mb-11  lg:mt-[11vh] bg-gray-50'>
+
             <h2 className='text-xl font-bold mb-4'>NerdQaxe - Open-Source Bitcoin ASIC Miner</h2>
             <p className='mb-4'>Powerful Mining in a Compact Form Factor</p>
             <p className='mb-4'>NerdQaxe is a fully open-source Bitcoin ASIC miner equipped with 4 BM1370 ASIC chips from Antminer's S21 Pro. This design ensures efficient and powerful mining capabilities, achieving up to 4.8 TH/s at an energy efficiency of ~16.2 W/TH. It operates using a 12V 10A power supply, making it perfect for home miners seeking reliable performance.
